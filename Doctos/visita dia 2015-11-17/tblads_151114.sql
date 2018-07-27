@@ -1,0 +1,2 @@
+INSERT INTO tblads VALUES (87, 81, 660, 'action principal relat_descontos', 'Relatório de Descontos', 3);
+INSERT INTO tblads VALUES (88, 81, 670, 'action principal relat_cortesias', 'Relatório de Cortesias', 3);

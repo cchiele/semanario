@@ -1,0 +1,29 @@
+-- MySQL Workbench Synchronization
+-- Generated: 2015-02-07 23:32
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: Cristiano
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+ALTER TABLE `semanario`.`tblgaa` 
+ADD COLUMN `gaacod` INT(11) NULL DEFAULT NULL FIRST,
+ADD COLUMN `vencod` INT(11) NULL DEFAULT NULL AFTER `gaadtgerauto`,
+ADD COLUMN `gaavlass` DOUBLE NULL DEFAULT NULL AFTER `vencod`,
+ADD COLUMN `gaanromes` INT(11) NULL DEFAULT NULL AFTER `gaavlass`,
+ADD INDEX `fk_tblgaa_tblven1_idx` (`vencod` ASC);
+
+ALTER TABLE `semanario`.`tblgaa` 
+ADD CONSTRAINT `fk_tblgaa_tblven1`
+  FOREIGN KEY (`vencod`)
+  REFERENCES `semanario`.`tblven` (`vencod`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

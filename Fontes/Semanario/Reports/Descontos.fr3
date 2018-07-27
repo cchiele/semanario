@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.1.5" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4089" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="41479,9501441667" ReportOptions.Description.Text="" ReportOptions.LastChange="42322,9757811574" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape"/>
+    <item DataSet="frxDsDescontos" DataSetName="dsDescontos"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Baixas" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="25,67718" Left="0" Top="340,1577" Width="718,1107">
+      <TfrxLineView Name="Line2" Align="baWidth" Left="0" Top="0,0943100000000072" Width="718,1107" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeUsuario" Align="baLeft" Left="0" Top="3,89733999999999" Width="377,63018" Height="18,89765" DataField="Usuario" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" Text="[dsCabecalhoRodape.&#34;Usuario&#34;]"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeVersao" Align="baRight" Left="518,48052" Top="3,89733999999999" Width="199,63018" Height="18,89765" DataField="Versao" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" HAlign="haRight" Text="[dsCabecalhoRodape.&#34;Versao&#34;]"/>
+    </TfrxPageFooter>
+    <TfrxPageHeader Name="PageHeader1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="76,67718" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="dsCabecalhoEmpresa" Align="baLeft" Left="0" Top="1,37786" Width="503,01608" Height="18,89765" DataField="Empresa" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[dsCabecalhoRodape.&#34;Empresa&#34;]"/>
+      <TfrxMemoView Name="Memo1" Left="598,66666667" Top="23,14687667" Width="75,48825" Height="18,89765" HAlign="haRight" Text="[Date]"/>
+      <TfrxMemoView Name="Memo2" Align="baRight" Left="676,62245" Top="23,14687666" Width="41,48825" Height="18,89765" DisplayFormat.FormatStr="hh:mm" DisplayFormat.Kind="fkDateTime" HAlign="haRight" Text="[Time]"/>
+      <TfrxMemoView Name="Memo3" Align="baRight" Left="513,91373" Top="1,48021" Width="204,19697" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="Página [Page#] de [TotalPages#]"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeTitulo" Left="128" Top="23,48021" Width="465,63018" Height="18,89765" DataField="Titulo" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="[dsCabecalhoRodape.&#34;Titulo&#34;]"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeSubTitulo" Align="baRight" Left="2,16511999999995" Top="48,48021" Width="715,94558" Height="18,89765" DataField="SubTitulo" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" HAlign="haCenter" Text="[dsCabecalhoRodape.&#34;SubTitulo&#34;]"/>
+      <TfrxLineView Name="Line1" Align="baWidth" Left="0" Top="72,48021" Width="718,1107" Height="0" Color="0" Frame.Typ="4"/>
+    </TfrxPageHeader>
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22,89765" Left="0" Top="204,09462" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDsDescontos" DataSetName="dsDescontos" RowCount="0" Stretched="True">
+      <TfrxMemoView Name="dsBaixasassnome" Left="45" Top="1,88976378000001" Width="347,37817" Height="18,89765" DataField="assnome" DataSet="frxDsDescontos" DataSetName="dsDescontos" WordWrap="False" Text="[dsDescontos.&#34;assnome&#34;]"/>
+      <TfrxMemoView Name="dsBaixasasscod" Align="baLeft" Left="0" Top="1,99196000000001" Width="42,70865654" Height="18,8976378" DataField="asscod" DataSet="frxDsDescontos" DataSetName="dsDescontos" Text="[dsDescontos.&#34;asscod&#34;]"/>
+      <TfrxMemoView Name="dsBaixasbdadt" Left="396,49611669" Top="1,99196000000001" Width="86,92914118" Height="18,89765" DataField="adadtini" DataSet="frxDsDescontos" DataSetName="dsDescontos" Text="[dsDescontos.&#34;adadtini&#34;]"/>
+      <TfrxMemoView Name="dsBaixasbdavl" Left="487,07920394" Top="1,88976378000001" Width="88,44094488" Height="18,89765" DataSet="frxDsDescontos" DataSetName="dsDescontos" Text="[dsDescontos.&#34;adadtvenc&#34;]"/>
+      <TfrxMemoView Name="Memo10" Align="baRight" Left="642,52014882" Top="2,31478000000001" Width="75,59055118" Height="18,89765" DataField="adavl" DataSet="frxDsDescontos" DataSetName="dsDescontos" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[dsDescontos.&#34;adavl&#34;]"/>
+      <TfrxMemoView Name="dsCondPagtoadavldesc" Left="580,29159" Top="1,99196000000001" Width="58,25201" Height="18,89765" DataSet="frxDsDescontos" DataSetName="dsDescontos" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[dsDescontos.&#34;adavldesc&#34;]"/>
+    </TfrxMasterData>
+    <TfrxColumnHeader Name="ColumnHeader1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="25,83457" Left="0" Top="117,16543" Width="718,1107">
+      <TfrxMemoView Name="Memo5" Align="baLeft" Left="0" Top="0" Width="42,70866142" Height="18,89765" Text="Cód."/>
+      <TfrxLineView Name="Line3" Align="baWidth" Left="0" Top="22,05504" Width="718,1107" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo6" Left="44,97637795" Top="0" Width="76,48825" Height="18,89765" Text="Assinante"/>
+      <TfrxMemoView Name="Memo7" Left="487,93700787" Top="0" Width="88,48825" Height="18,89765" Text="Dt.Venci.Ass."/>
+      <TfrxMemoView Name="Memo8" Align="baRight" Left="642,52014882" Top="0" Width="75,59055118" Height="18,89765" HAlign="haRight" Text="Valor Ass."/>
+      <TfrxMemoView Name="Memo14" Left="580,29159" Top="0" Width="58,25201" Height="18,89765" HAlign="haRight" Text="Vl.Desc."/>
+      <TfrxMemoView Name="Memo4" Left="395,3624" Top="0" Width="88,48825" Height="18,89765" Text="Dt.Início Ass."/>
+    </TfrxColumnHeader>
+    <TfrxReportSummary Name="ReportSummary1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="30,23624" Left="0" Top="287,24428" Width="718,1107">
+      <TfrxMemoView Name="Memo9" Align="baRight" Left="642,52014882" Top="7,23624000000001" Width="75,59055118" Height="18,89765" DataSet="frxDsDescontos" DataSetName="dsDescontos" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[SUM(&#60;dsDescontos.&#34;adavl&#34;&#62;,MasterData1)]"/>
+      <TfrxLineView Name="Line4" Align="baWidth" Left="0" Top="3,77953000000002" Width="718,1107" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo11" Left="431" Top="6,77953000000002" Width="110,48825" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="TOTAL GERAL:"/>
+      <TfrxMemoView Name="Memo15" Left="580,29159" Top="7,23624000000001" Width="58,25201" Height="18,89765" DataSet="frxDsDescontos" DataSetName="dsDescontos" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[SUM(&#60;dsDescontos.&#34;adavldesc&#34;&#62;,MasterData1)]"/>
+    </TfrxReportSummary>
+  </TfrxReportPage>
+</TfrxReport>

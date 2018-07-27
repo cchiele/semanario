@@ -1,0 +1,22 @@
+-- MySQL Workbench Synchronization
+-- Generated: 2015-02-16 09:11
+-- Model: New Model
+-- Version: 1.0
+-- Project: Name of the project
+-- Author: Cristiano
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+ALTER TABLE `semanario`.`tblada` 
+CHANGE COLUMN `adavl` `adavl` DOUBLE NOT NULL DEFAULT 0 ,
+CHANGE COLUMN `adavlpend` `adavlpend` DOUBLE NOT NULL DEFAULT 0 ,
+ADD COLUMN `adavldesc` DOUBLE NOT NULL DEFAULT 0 AFTER `adavl`,
+ADD COLUMN `adavltot` DOUBLE NOT NULL DEFAULT 0 AFTER `adavldesc`;
+
+update `semanario`.`tblada` set `adavltot` = `adavl` where 1 = 1;
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="4.13.2" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4089" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="41479,9501441667" ReportOptions.Description.Text="" ReportOptions.LastChange="42051,4456804051" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403700203546F7003C8000844617461736574730101063520446174615365743D22667278447341737352656E6F7661722220446174615365744E616D653D22647341737352656E6F766172220001063F20446174615365743D2266727844734361626563616C686F526F646170652220446174615365744E616D653D2264734361626563616C686F526F64617065220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Baixas" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxPageFooter Name="PageFooter1" Height="25,67718" Left="0" Top="389,29159" Width="718,1107">
+      <TfrxLineView Name="Line2" Align="baWidth" Left="0" Top="0,09431" Width="718,1107" Height="0" ShowHint="False" Frame.Typ="4"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeUsuario" Align="baLeft" Left="0" Top="3,89734" Width="377,63018" Height="18,89765" ShowHint="False" DataField="Usuario" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" Text="[dsCabecalhoRodape.&#34;Usuario&#34;]"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeVersao" Align="baRight" Left="518,48052" Top="3,89734" Width="199,63018" Height="18,89765" ShowHint="False" DataField="Versao" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" HAlign="haRight" Text="[dsCabecalhoRodape.&#34;Versao&#34;]"/>
+    </TfrxPageFooter>
+    <TfrxPageHeader Name="PageHeader1" Height="76,67718" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="dsCabecalhoEmpresa" Align="baLeft" Left="0" Top="1,37786" Width="503,01608" Height="18,89765" ShowHint="False" DataField="Empresa" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[dsCabecalhoRodape.&#34;Empresa&#34;]"/>
+      <TfrxMemoView Name="Memo1" Left="598,66666667" Top="23,14687667" Width="75,48825" Height="18,89765" ShowHint="False" HAlign="haRight" Text="[Date]"/>
+      <TfrxMemoView Name="Memo2" Align="baRight" Left="676,62245" Top="23,14687666" Width="41,48825" Height="18,89765" ShowHint="False" DisplayFormat.FormatStr="hh:mm" DisplayFormat.Kind="fkDateTime" HAlign="haRight" Text="[Time]"/>
+      <TfrxMemoView Name="Memo3" Align="baRight" Left="513,91373" Top="1,48021" Width="204,19697" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="Página [Page#] de [TotalPages#]"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeTitulo" Left="128" Top="23,48021" Width="465,63018" Height="18,89765" ShowHint="False" DataField="Titulo" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="[dsCabecalhoRodape.&#34;Titulo&#34;]"/>
+      <TfrxMemoView Name="dsCabecalhoRodapeSubTitulo" Align="baWidth" Left="0" Top="48,48021" Width="718,1107" Height="18,89765" ShowHint="False" DataField="SubTitulo" DataSet="frxDsCabecalhoRodape" DataSetName="dsCabecalhoRodape" HAlign="haCenter" Text="[dsCabecalhoRodape.&#34;SubTitulo&#34;]"/>
+      <TfrxLineView Name="Line1" Align="baWidth" Left="0" Top="72,48021" Width="718,1107" Height="0" ShowHint="False" Frame.Typ="4"/>
+    </TfrxPageHeader>
+    <TfrxGroupHeader Name="GroupHeader1" Height="29,1023622" Left="0" Top="204,09462" Width="718,1107" Condition="dsAssRenovar.&#34;zoncod&#34;">
+      <TfrxMemoView Name="dsBaixasgdvdescr" Align="baLeft" Left="0" Top="10" Width="682,85065" Height="18,89765" ShowHint="False" DataSet="frxDsBaixas" DataSetName="dsBaixas" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Zona: [dsAssRenovar.&#34;zoncod&#34;] - [dsAssRenovar.&#34;zondescr&#34;]"/>
+    </TfrxGroupHeader>
+    <TfrxMasterData Name="MasterData1" Height="22,89765" Left="0" Top="257,00804" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDsAssRenovar" DataSetName="dsAssRenovar" RowCount="0" Stretched="True">
+      <TfrxMemoView Name="dsBaixasassnome" Left="45" Top="1,88976378" Width="221,85065" Height="18,89765" ShowHint="False" DataField="assnome" DataSet="frxDsAssRenovar" DataSetName="dsAssRenovar" WordWrap="False" Text="[dsAssRenovar.&#34;assnome&#34;]"/>
+      <TfrxMemoView Name="dsBaixasasscod" Align="baLeft" Left="0" Top="1,99196" Width="42,70865654" Height="18,8976378" ShowHint="False" DataField="asscod" DataSet="frxDsAssRenovar" DataSetName="dsAssRenovar" Text="[dsAssRenovar.&#34;asscod&#34;]"/>
+      <TfrxMemoView Name="dsBaixasbdadt" Left="567" Top="1,99196" Width="75,59055118" Height="18,89765" ShowHint="False" DataField="adadtvenc" DataSet="frxDsAssRenovar" DataSetName="dsAssRenovar" Text="[dsAssRenovar.&#34;adadtvenc&#34;]"/>
+      <TfrxMemoView Name="dsBaixasbdavl" Align="baRight" Left="642,52014882" Top="1,99196" Width="75,59055118" Height="18,89765" ShowHint="False" DataField="adavltot" DataSet="frxDsAssRenovar" DataSetName="dsAssRenovar" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[dsAssRenovar.&#34;adavltot&#34;]"/>
+      <TfrxMemoView Name="Memo4" Left="274,84251969" Top="1,88976378" Width="287,63018" Height="18,89765" ShowHint="False" StretchMode="smMaxHeight" DataField="CalcEnderecoCompleto" DataSet="frxDsAssRenovar" DataSetName="dsAssRenovar" Text="[dsAssRenovar.&#34;CalcEnderecoCompleto&#34;]"/>
+    </TfrxMasterData>
+    <TfrxColumnHeader Name="ColumnHeader1" Height="25,83457" Left="0" Top="117,16543" Width="718,1107">
+      <TfrxMemoView Name="Memo5" Align="baLeft" Left="0" Top="0" Width="42,70866142" Height="18,89765" ShowHint="False" Text="Cód."/>
+      <TfrxLineView Name="Line3" Align="baWidth" Left="0" Top="22,05504" Width="718,1107" Height="0" ShowHint="False" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo6" Left="44,97637795" Top="0" Width="76,48825" Height="18,89765" ShowHint="False" Text="Assinante"/>
+      <TfrxMemoView Name="Memo7" Left="566,93700787" Top="0" Width="75,48825" Height="18,89765" ShowHint="False" Text="Data Venc."/>
+      <TfrxMemoView Name="Memo8" Align="baRight" Left="642,52014882" Top="0" Width="75,59055118" Height="18,89765" ShowHint="False" HAlign="haRight" Text="Vl.Tot.Ass."/>
+      <TfrxMemoView Name="Memo14" Left="274,84251969" Top="0" Width="144,48825" Height="18,89765" ShowHint="False" Text="Endereço de entrega"/>
+    </TfrxColumnHeader>
+    <TfrxReportSummary Name="ReportSummary1" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" Height="26,89765" Left="0" ParentFont="False" Top="340,1577" Width="718,1107">
+      <TfrxMemoView Name="Memo10" Align="baRight" Left="623,62245" Top="5,59029" Width="94,48825" Height="18,89765" ShowHint="False" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[SUM(&#60;dsAssRenovar.&#34;adavl&#34;&#62;,MasterData1)]"/>
+      <TfrxLineView Name="Line5" Align="baWidth" Left="0" Top="1,70841" Width="718,1107" Height="0" ShowHint="False" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo12" Left="507" Top="5,70841" Width="110,48825" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="TOTAL GERAL:"/>
+      <TfrxMemoView Name="Memo13" Left="179" Top="4,26747" Width="91,48825" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[COUNT(MasterData1)]"/>
+      <TfrxMemoView Name="Memo15" Align="baLeft" Left="0" Top="4,26747" Width="176,48825" Height="18,89765" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="TOTAL DE RENOVAÇÕES:"/>
+    </TfrxReportSummary>
+  </TfrxReportPage>
+</TfrxReport>
