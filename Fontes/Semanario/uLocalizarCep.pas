@@ -8,7 +8,7 @@ uses
   Vcl.ExtCtrls, JvExStdCtrls, JvButton, JvCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids,
   Datasnap.DBClient, System.JSON, IPPeerClient, REST.Client,
   Data.Bind.Components, Data.Bind.ObjectScope, uPrincipal, JvComponentBase,
-  JvEnterTab, uMensagem, Vcl.ScreenTips;
+  JvEnterTab, uMensagem, REST.Types;
 
 type
   TfrmLocalizarCep = class(TForm)
@@ -37,7 +37,8 @@ type
     JvEnterAsTab: TJvEnterAsTab;
     TimerInicio: TTimer;
     LinkLabel1: TLinkLabel;
-    ScreenTipsPopup1: TScreenTipsPopup;
+    BalloonHint1: TBalloonHint;
+    lblAjuda: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure btnPesquisarCepClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
@@ -47,6 +48,7 @@ type
     procedure DBGridCepsEnter(Sender: TObject);
     procedure DBGridCepsExit(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure lblAjudaClick(Sender: TObject);
   private
     { Private declarations }
     FdmDadosGlobal: TdmDadosGlobal;
@@ -281,6 +283,28 @@ begin
     exit;
 
   Result := AnsiUpperCase(cdsResultadouf.Value);
+end;
+
+procedure TfrmLocalizarCep.lblAjudaClick(Sender: TObject);
+begin
+  BalloonHint1.Title := 'Dicas para melhorar a pesquisa';
+  BalloonHint1.Description :=
+    '1) Não é necessário preencher o endereço completo;' + sLineBreak +
+    //sLineBreak +
+    '2) O endereço pode ou não ser acentuado;' + sLineBreak +
+    //sLineBreak +
+    '3) Não informe no endereço o número da casa, apto, etc;' + sLineBreak +
+    //sLineBreak +
+    '4) Nomes de ruas com números, devemos substituir o número pelo extenso,' + sLineBreak +
+    'exemplo: RUA 13 DE MAIO -> RUA TREZE DE MAIO;' + sLineBreak +
+    //sLineBreak +
+    '5) Substituir abreviaturas, conforme abaixo:' + sLineBreak +
+    'DR. -> DOUTOR' + sLineBreak +
+    'TV. -> TRAVESSA' + sLineBreak +
+    'AV. -> AVENIDA' + sLineBreak +
+    'GEN. -> GENERAL';
+  BalloonHint1.HideAfter := 5000;
+  BalloonHint1.ShowHint(lblAjuda);
 end;
 
 procedure TfrmLocalizarCep.SetCidade(const Value: String);

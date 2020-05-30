@@ -6,7 +6,8 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.DBCtrls, Vcl.StdCtrls, JvExStdCtrls,
   JvButton, JvCtrls, Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Data.DB,
-  Vcl.ImgList, Vcl.ComCtrls, JvExControls, JvInstallLabel, Vcl.Menus;
+  Vcl.ImgList, Vcl.ComCtrls, JvExControls, JvInstallLabel, Vcl.Menus,
+  System.ImageList;
 
 type
    TTela = (Consultar, Manutencao);
@@ -130,6 +131,9 @@ begin
   dmUsuario.SalvarUsuario;
 
   ControlarTela(Consultar);
+
+  // Atualiza o menu, pois pode ter alterado as permissões
+  frmPrincipal.CarregarMenuPrincipal;
 end;
 
 procedure TfrmCadUsuarios.ControlarTela(ATela: TTela);

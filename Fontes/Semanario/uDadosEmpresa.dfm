@@ -1,13 +1,10 @@
 object dmDadosEmpresa: TdmDadosEmpresa
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  Left = 399
-  Top = 189
   Height = 354
   Width = 525
   object sqlTblemp: TSQLDataSet
     CommandText = 'select *'#13#10'from tblemp'
-    DbxCommandType = 'Dbx.SQL'
     MaxBlobSize = -1
     Params = <>
     SQLConnection = dmConexao.SQLConnection
@@ -87,7 +84,6 @@ object dmDadosEmpresa: TdmDadosEmpresa
     CommandText = 
       'select cepcep, cepmunicipio, cepeuf'#13#10'from tblcep'#13#10'where cepcep =' +
       ' :cepcep'
-    DbxCommandType = 'Dbx.SQL'
     DataSource = dsTblcep
     MaxBlobSize = -1
     Params = <

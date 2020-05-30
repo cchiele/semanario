@@ -5,22 +5,19 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, System.UITypes,
-  Vcl.RibbonLunaStyleActnCtrls, Vcl.Ribbon, Vcl.ExtCtrls, JvComponentBase,
+  Vcl.ExtCtrls, JvComponentBase,
   JvEnterTab, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnList, Vcl.ActnMan,
-  Vcl.ScreenTips, Vcl.ImgList, Vcl.Menus, JvExControls, JvPageList, JvTabBar,
+  Vcl.ImgList, Vcl.Menus, JvExControls, JvPageList, JvTabBar,
   Data.FMTBcd, Data.DB, Data.SqlExpr, System.Actions, System.ImageList,
-  midaslib;
+  midaslib, Vcl.CategoryButtons, Vcl.WinXCtrls, Vcl.StdCtrls,
+  Vcl.Imaging.pngimage;
 
 type
   TfrmPrincipal = class(TForm)
-    RibbonPrincipal: TRibbon;
-    StatusBar: TStatusBar;
     TimerInicio: TTimer;
     JvEnterAsTab: TJvEnterAsTab;
     ActionManager: TActionManager;
-    ImageList32: TImageList;
     ImageList16: TImageList;
-    ScreenTipsManager: TScreenTipsManager;
     ActionCadastroAssinantes: TAction;
     ActionCadastroUsuarios: TAction;
     ActionAlterarSenha: TAction;
@@ -49,6 +46,23 @@ type
     ActionRelatCondicoesPagto: TAction;
     ActionRelatDescontos: TAction;
     ActionRelatCortesias: TAction;
+    pnlTopo: TPanel;
+    imgMenu: TImage;
+    lblEmpresa: TLabel;
+    Panel2: TPanel;
+    lblUsuario: TLabel;
+    Label3: TLabel;
+    Image1: TImage;
+    ImageListMenu32: TImageList;
+    svMenu: TSplitView;
+    ctbMenu: TCategoryButtons;
+    svSubMenu: TSplitView;
+    ctbSubMenu: TCategoryButtons;
+    pnlMeio: TPanel;
+    ImageListSubMenu32: TImageList;
+    pnlSair: TPanel;
+    imgSair: TImage;
+    Label1: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure TimerInicioTimer(Sender: TObject);
     procedure ActionCadastroUsuariosExecute(Sender: TObject);
@@ -78,10 +92,19 @@ type
     procedure ActionRelatCondicoesPagtoExecute(Sender: TObject);
     procedure ActionRelatDescontosExecute(Sender: TObject);
     procedure ActionRelatCortesiasExecute(Sender: TObject);
+    procedure imgMenuClick(Sender: TObject);
+    procedure ctbMenuButtonClicked(Sender: TObject; const Button: TButtonItem);
+    procedure svSubMenuClosed(Sender: TObject);
+    procedure ctbSubMenuMouseLeave(Sender: TObject);
+    procedure pnlSairMouseEnter(Sender: TObject);
+    procedure pnlSairMouseLeave(Sender: TObject);
+    procedure pnlSairClick(Sender: TObject);
   private
     { Private declarations }
-    procedure CarregarRibbonPrincipal;
-    procedure CarregarRibbon(APai: Integer; ATipo: String; ADescr: String; ARibbonPage: TCustomRibbonPage; ARibbonGroup: TRibbonGroup);
+    FLastMenuItemIndexSelected: Integer;
+
+    procedure CarregarSubMenu(AMenuDescri: String);
+
     procedure NovaPagina(ClasseForm: TFormClass; IndiceImagem: Integer);
     procedure AjustarCaptionAbas(ClasseForm: TFormClass);
 
@@ -94,6 +117,8 @@ type
 
   public
     { Public declarations }
+    procedure CarregarMenuPrincipal;
+
     function GetVersaoPrograma: string;
     function ObterIndexFormulario(ClasseForm: TFormClass): Integer;
     function FecharPagina(Pagina: TJvCustomPage): Boolean; overload;
@@ -106,7 +131,7 @@ implementation
 
 {$R *.dfm}
 
-uses uRibbonDynamic, uConexao, uUsuario, uCadZonas, uCadCeps, uDadosGlobal,
+uses uConexao, uUsuario, uCadZonas, uCadCeps, uDadosGlobal,
   uDadosCep, uCadUsuarios, uDadosEmpresa, uEmpresa, uCadCobradores,
   uDadosCobradores, uDadosVendedores, uCadGruposVendedores, uAlterarSenha,
   uCadVendedores, uDadosZonasRuas, uCadRuas, uDadosAssinantes,
@@ -117,6 +142,8 @@ uses uRibbonDynamic, uConexao, uUsuario, uCadZonas, uCadCeps, uDadosGlobal,
 
 procedure TfrmPrincipal.ActionAlterarSenhaExecute(Sender: TObject);
 begin
+  svSubMenu.Close;
+
   try
     frmAlterarSenha := TfrmAlterarSenha.Create(self);
     frmAlterarSenha.ShowModal;
@@ -275,6 +302,8 @@ end;
 
 procedure TfrmPrincipal.ActionRenovacaoAutoExecute(Sender: TObject);
 begin
+  svSubMenu.Close;
+
   frmRenovarAssinaturasAuto := TfrmRenovarAssinaturasAuto.Create(self);
   try
     frmRenovarAssinaturasAuto.ShowModal;
@@ -310,122 +339,147 @@ begin
   end;
 end;
 
-procedure TfrmPrincipal.CarregarRibbon(APai: Integer; ATipo: String;
-  ADescr: String; ARibbonPage: TCustomRibbonPage; ARibbonGroup: TRibbonGroup);
+procedure TfrmPrincipal.CarregarMenuPrincipal;
 var
   sqlDataSet: TSQLDataSet;
-  SQL: String;
+  lButtonItem: TButtonItem;
   i: integer;
-begin
-  if ARibbonPage = nil then
-  begin
-    // Adiciona a TAB
-    if TemAcessoTipoActionPrincipal(APai, ATipo) then
-      ARibbonPage := AddPage(RibbonPrincipal, ADescr);
-  end
-  else
-  begin
-    if ATipo = '3' then  // Action Principal
-    begin
-      for I := 0 to ActionManager.ActionCount -1 do
-        if ActionManager.Actions[i].Tag = APai then
-          AddItem(i, i, ARibbonGroup, ActionManager, 0, 1, 0);
-    end
-    else
-      if TemAcessoTipoActionPrincipal(APai, ATipo) then
-        ARibbonGroup := AddGroup(ARibbonPage, ActionManager, ADescr);
-  end;
-
-  sqlDataSet := TSQLDataSet.Create(nil);
-  try
-    if ATipo = '1' then
-    begin
-      // Seleciono os Ribbon Groups
-      SQL :=
-        'select tblads.* ' +
-        '  from tblads ' +
-        ' where adscodpai = ' + IntToStr(APai) +
-        '   and adstipo <> 4 ' +
-        ' order by adsordem';
-    end
-    else
-    begin
-      // Seleciona os Actions Principais
-      SQL :=
-        'select tblads.* ' +
-        '  from tblads, tblpdu ' +
-        ' where tblads.adscod = tblpdu.adscod ' +
-        '   and tblads.adscodpai = ' + IntToStr(APai) +
-        '   and tblads.adstipo = 3 ' +
-        '   and tblpdu.usucod = ' + IntToStr(dmUsuario.cdsUsuariousucod.Value) +
-        ' order by tblads.adsordem';
-    end;
-
-    sqlDataSet.CommandText := SQL;
-    sqlDataSet.SQLConnection := dmConexao.SQLConnection;
-    sqlDataSet.Close;
-    sqlDataSet.Open;
-
-    while not sqlDataSet.Eof do
-    begin
-      CarregarRibbon(sqlDataSet.FieldByName('adscod').AsInteger, sqlDataSet.FieldByName('adstipo').AsString, sqlDataSet.FieldByName('adsdescr').AsString, ARibbonPage, ARibbonGroup);
-
-      sqlDataSet.Next;
-    end;
-  finally
-    FreeAndNil(sqlDataSet);
-  end;
-end;
-
-procedure TfrmPrincipal.CarregarRibbonPrincipal;
-var
-  sqlDataSet: TSQLDataSet;
 begin
   TfrmMensagem.MostrarMesagem('Aguarde, carregando menus...');
   try
+    i := 0;
+    ctbMenu.Categories[0].Items.Clear;
+
     sqlDataSet := TSQLDataSet.Create(nil);
     try
       try
-        sqlDataSet.CommandText := 'select * from tblads where adstipo = 1 order by adsordem';
-        sqlDataSet.SQLConnection := dmConexao.SQLConnection;
+        sqlDataSet.CommandText :=
+          'select distinct ads_page.adscod, ads_page.adsordem, ads_page.adsdescr ' +
+          '  from tblpdu, ' +
+          '       tblads ads_page, ' +
+          '		 tblads ads_group, ' +
+          '		 tblads ads_action ' +
+          ' where ads_action.adscod = tblpdu.adscod ' +
+          '   and ads_action.adscodpai = ads_group.adscod ' +
+          '   and ads_group.adscodpai = ads_page.adscod ' +
+          '   and ads_action.adstipo = 3 ' +
+          '   and tblpdu.usucod = ' + dmUsuario.cdsUsuariousucod.Value.ToString +
+          ' order by ads_page.adsordem ';
 
+        sqlDataSet.SQLConnection := dmConexao.SQLConnection;
         sqlDataSet.Close;
         sqlDataSet.Open;
 
         while not sqlDataSet.Eof do
         begin
-          CarregarRibbon(sqlDataSet.FieldByName('adscod').AsInteger, sqlDataSet.FieldByName('adstipo').AsString, sqlDataSet.FieldByName('adsdescr').AsString, nil, nil);
+          lButtonItem := ctbMenu.Categories[0].Items.Add;
 
+          lButtonItem.Caption := '  ' + sqlDataSet.FieldByName('adsdescr').AsString;
+
+          if sqlDataSet.FieldByName('adscod').AsInteger = 1 then  // Cadastros
+            lButtonItem.ImageIndex := 0
+          else if sqlDataSet.FieldByName('adscod').AsInteger = 32 then  // Movimentos
+            lButtonItem.ImageIndex := 1
+          else if sqlDataSet.FieldByName('adscod').AsInteger = 38 then // Relatórios
+            lButtonItem.ImageIndex := 2
+          else if sqlDataSet.FieldByName('adscod').AsInteger = 53 then  // Administração
+            lButtonItem.ImageIndex := 3
+          else
+            lButtonItem.ImageIndex := 0;
+
+          Inc(i);
           sqlDataSet.Next;
         end;
       except
         on E: Exception do
         begin
-          MessageDlg('Ocorreu um problema ao montar o menu do usuário.' + chr(10) + chr(10) + 'Erro: ' + e.Message, mtWarning,[mbOK],0);
+          MessageDlg('Ocorreu um problema ao montar o menu do usuário.' + sLineBreak + sLineBreak + 'Erro: ' + e.Message, mtWarning,[mbOK],0);
           close;
         end;
       end;
     finally
       FreeAndNil(sqlDataSet);
     end;
-
-    if RibbonPrincipal.Tabs.Count = 0 then
-    begin
-      MessageDlg('Usuário não tem nenhuma permissão para acessar este programa.' + chr(10) + 'Fale com o administrador para que ele cadastre permissões.', mtWarning,[mbOK],0);
-      close;
-      exit;
-    end;
-
-    // Gambiarra
-    try
-      RibbonPrincipal.TabIndex := 1;
-      RibbonPrincipal.TabIndex := 0;
-    except
-    end;
-    
   finally
     TfrmMensagem.MostrarMesagem;
   end;
+end;
+
+procedure TfrmPrincipal.CarregarSubMenu(AMenuDescri: String);
+var
+  sqlDataSet: TSQLDataSet;
+  lButtonItem: TButtonItem;
+  i: integer;
+begin
+  ctbSubMenu.Categories[0].Items.Clear;
+
+  sqlDataSet := TSQLDataSet.Create(nil);
+  try
+    sqlDataSet.CommandText :=
+      'select ads_action.adscod, ads_action.adsordem, ads_action.adsdescr ' +
+      '  from tblpdu, ' +
+      '       tblads ads_page,  ' +
+      '		    tblads ads_group, ' +
+      '		    tblads ads_action ' +
+      ' where ads_action.adscod = tblpdu.adscod ' +
+      '   and ads_action.adscodpai = ads_group.adscod ' +
+      '   and ads_group.adscodpai = ads_page.adscod ' +
+      '   and ads_action.adstipo = 3 ' +
+      '   and tblpdu.usucod = ' + dmUsuario.cdsUsuariousucod.Value.ToString +
+      '   and ads_page.adsdescr = ' + QuotedStr(AMenuDescri) +
+      ' order by ads_action.adsordem ';
+    sqlDataSet.SQLConnection := dmConexao.SQLConnection;
+    sqlDataSet.Close;
+    sqlDataSet.Open;
+
+    while not sqlDataSet.Eof do
+    begin
+      for i := 0 to ActionManager.ActionCount -1 do
+      begin
+        if ActionManager.Actions[i].Tag = sqlDataSet.FieldByName('adscod').AsInteger then
+        begin
+          lButtonItem := ctbSubMenu.Categories[0].Items.Add;
+
+          lButtonItem.Caption := '  ' + sqlDataSet.FieldByName('adsdescr').AsString;
+          lButtonItem.ImageIndex := ActionManager.Actions[i].ImageIndex;
+          lButtonItem.Action := ActionManager.Actions[i];
+        end;
+      end;
+
+      sqlDataSet.Next;
+    end;
+  finally
+    FreeAndNil(sqlDataSet);
+  end;
+
+end;
+
+procedure TfrmPrincipal.ctbMenuButtonClicked(Sender: TObject;
+  const Button: TButtonItem);
+begin
+  if Button.Index = FLastMenuItemIndexSelected then
+  begin
+    if svSubMenu.Opened then
+      svSubMenu.Close
+    else
+    begin
+      CarregarSubMenu(Button.Caption.Trim);
+      svSubMenu.Open;
+    end;
+  end
+  else
+  begin
+    svSubMenu.Close;
+    CarregarSubMenu(Button.Caption.Trim);
+    svSubMenu.Open;
+  end;
+
+  FLastMenuItemIndexSelected := Button.Index;
+end;
+
+procedure TfrmPrincipal.ctbSubMenuMouseLeave(Sender: TObject);
+begin
+  svSubMenu.Close;
 end;
 
 function TfrmPrincipal.FecharPagina(Pagina: TJvCustomPage): Boolean;
@@ -583,10 +637,15 @@ begin
     end;
   end;
 
-
+  // ---------------------------------------------------------------------------
 
   frmPrincipal.Caption := frmPrincipal.Caption + ' - Versão ' + GetVersaoPrograma;
-  RibbonPrincipal.Caption := frmPrincipal.Caption;
+
+  FLastMenuItemIndexSelected := -1;
+  pnlTopo.Visible := false;
+  svMenu.Visible := false;
+  svSubMenu.Visible := false;
+  svSubMenu.Opened := false;
 
   TimerInicio.Enabled := true;
 end;
@@ -629,6 +688,14 @@ begin
   end;
 end;
 
+procedure TfrmPrincipal.imgMenuClick(Sender: TObject);
+begin
+  if svMenu.Opened then
+    svMenu.Close
+  else
+    svMenu.Open;
+end;
+
 procedure TfrmPrincipal.JvPageListChange(Sender: TObject);
 begin
   ObterAba(JvPageList.ActivePage).Selected := True;
@@ -657,6 +724,8 @@ var
   Pagina : TJvCustomPage;
   Form   : TForm;
 begin
+  svSubMenu.Close;
+
   if not PodeAbrirFormulario(ClasseForm, Pagina) then
   begin
     JvPageList.ActivePage := Pagina;
@@ -722,6 +791,22 @@ begin
   Result := JvPageList.Pages[Aba.Index];
 end;
 
+procedure TfrmPrincipal.pnlSairClick(Sender: TObject);
+begin
+  close;
+end;
+
+procedure TfrmPrincipal.pnlSairMouseEnter(Sender: TObject);
+begin
+  pnlSair.ParentBackground := false;
+  pnlSair.Color := $00F68F69;
+end;
+
+procedure TfrmPrincipal.pnlSairMouseLeave(Sender: TObject);
+begin
+  pnlSair.ParentBackground := true;
+end;
+
 function TfrmPrincipal.PodeAbrirFormulario(ClasseForm: TFormClass;
   var Pagina: TJvCustomPage): Boolean;
 var
@@ -737,6 +822,16 @@ begin
       Break;
     end;
   end;
+end;
+
+procedure TfrmPrincipal.svSubMenuClosed(Sender: TObject);
+begin
+  // Deseleciona o button no Menu Principal
+  ctbMenu.SelectedItem := nil;
+
+  // Removemos o index do button selecionado, como se não existisse
+  // nenhum buton selecionado
+  FLastMenuItemIndexSelected := -1;
 end;
 
 function TfrmPrincipal.TemAcessoTipoActionPrincipal(APai: Integer;
@@ -808,9 +903,15 @@ begin
     exit;
   end;
 
-  StatusBar.Panels.Items[0].Text := 'Usuário: ' + dmUsuario.cdsUsuariousulogin.AsString;
+  lblEmpresa.Caption := trim(dmDadosEmpresa.cdsTblempemprazaosocial.Value);
+  lblUsuario.Caption := trim(dmUsuario.cdsUsuariousunome.Value) + ' (' + trim(dmUsuario.cdsUsuariousulogin.Value) + ')';
 
-  CarregarRibbonPrincipal;
+  CarregarMenuPrincipal;
+
+  pnlTopo.Visible := true;
+  svMenu.Visible := true;
+  svSubMenu.Visible := true;
+
 end;
 
 function TfrmPrincipal.TotalFormsAbertos(ClasseForm: TFormClass): Integer;

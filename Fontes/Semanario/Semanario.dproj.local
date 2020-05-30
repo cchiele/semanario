@@ -33,13 +33,14 @@
     <Transaction>2013/08/21 20:31:06.000.628,D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\Unit1.dfm=D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\uRelatAssinantes.dfm</Transaction>
     <Transaction>2013/08/28 22:07:44.000.429,D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\uCadBaixas.dfm=D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\Unit1.dfm</Transaction>
     <Transaction>2015/01/31 13:01:58.000.891,D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\Unit1.dfm=D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\uRelatAltCad.dfm</Transaction>
-    <Transaction>2015/02/28 15:30:22.000.800,D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\Unit1.dfm=D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\uRelatCondicoesPagto.dfm</Transaction>
     <Transaction>2015/02/28 15:30:22.000.800,D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\Unit1.pas=D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\uRelatCondicoesPagto.pas</Transaction>
-    <Transaction>2015/09/19 13:59:31.000.991,D:\Usuarios\Cristiano\Documentos\GitHub\semanario\Fontes\semanario\uRelatAlteracoesAssinante.pas=D:\Usuarios\Cristiano\Documentos\GitHub\semanario\Fontes\semanario\Unit1.pas</Transaction>
+    <Transaction>2015/02/28 15:30:22.000.800,D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\Unit1.dfm=D:\Usuarios\Cristiano\Documentos\RAD Studio\Projects\semanario\Fontes\semanario\uRelatCondicoesPagto.dfm</Transaction>
     <Transaction>2015/09/19 13:59:31.000.991,D:\Usuarios\Cristiano\Documentos\GitHub\semanario\Fontes\semanario\uRelatAlteracoesAssinante.dfm=D:\Usuarios\Cristiano\Documentos\GitHub\semanario\Fontes\semanario\Unit1.dfm</Transaction>
+    <Transaction>2015/09/19 13:59:31.000.991,D:\Usuarios\Cristiano\Documentos\GitHub\semanario\Fontes\semanario\uRelatAlteracoesAssinante.pas=D:\Usuarios\Cristiano\Documentos\GitHub\semanario\Fontes\semanario\Unit1.pas</Transaction>
     <Transaction>2015/11/14 23:03:46.000.762,D:\Usuarios\Cristiano\Documentos\Embarcadero\Studio\ProjetosSVN\Semanario\Fontes\Semanario\uRelatDescontos.dfm=D:\Usuarios\Cristiano\Documentos\Embarcadero\Studio\ProjetosSVN\Semanario\Fontes\Semanario\Unit1.dfm</Transaction>
     <Transaction>2016/01/30 22:38:48.000.983,D:\Usuarios\Cristiano\Documentos\Embarcadero\Studio\ProjetosSVN\Semanario\Fontes\Semanario\Unit1.dfm=D:\Usuarios\Cristiano\Documentos\Embarcadero\Studio\ProjetosSVN\Semanario\Fontes\Semanario\uRelatCortesias.dfm</Transaction>
     <Transaction>2016/06/20 17:10:20.000.894,D:\Usuarios\Cristiano\Documentos\Embarcadero\Studio\ProjetosSVN\Semanario\Fontes\Semanario\Unit1.dfm=D:\Usuarios\Cristiano\Documentos\Embarcadero\Studio\ProjetosSVN\Semanario\Fontes\Semanario\uLocalizarCep.dfm</Transaction>
+    <Transaction>2020/05/06 21:24:28.000.099,D:\Usuarios\Cristiano\Documentos\GitHub\semanario\Fontes\Semanario\uRibbonDynamic.pas=</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="uAlterarSenha.pas"/>
@@ -112,7 +113,6 @@
     <File Path="uRelatRecibos.dfm"/>
     <File Path="uRenovarAssinaturasAuto.pas"/>
     <File Path="uRenovarAssinaturasAuto.dfm"/>
-    <File Path="uRibbonDynamic.pas"/>
     <File Path="uUsuario.pas"/>
     <File Path="uUsuario.dfm"/>
     <File Path="uRelatCortesias.pas"/>

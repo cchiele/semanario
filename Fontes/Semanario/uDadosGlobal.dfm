@@ -22,12 +22,6 @@ object dmDadosGlobal: TdmDadosGlobal
     Left = 120
     Top = 72
   end
-  object ACBrValidador: TACBrValidador
-    IgnorarChar = './-'
-    RaiseExcept = True
-    Left = 32
-    Top = 16
-  end
   object cdsStatusAssinante: TClientDataSet
     Aggregates = <>
     Params = <>
@@ -91,14 +85,6 @@ object dmDadosGlobal: TdmDadosGlobal
     object sqlDataHoraBancodatahora: TSQLTimeStampField
       FieldName = 'datahora'
     end
-  end
-  object ACBrExtenso: TACBrExtenso
-    StrMoeda = 'Real'
-    StrMoedas = 'Reais'
-    StrCentavo = 'Centavo'
-    StrCentavos = 'Centavos'
-    Left = 32
-    Top = 208
   end
   object cdsLookupSimNao2: TClientDataSet
     Aggregates = <>

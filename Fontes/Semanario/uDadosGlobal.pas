@@ -3,9 +3,9 @@ unit uDadosGlobal;
 interface
 
 uses
-  System.SysUtils, System.Classes, Data.DB, Datasnap.DBClient, ACBrBase,
-  ACBrValidador, Vcl.Dialogs, Data.FMTBcd, Data.SqlExpr, Vcl.Controls,
-  Winapi.Windows, Vcl.Forms, Datasnap.Provider, ACBrExtenso, System.UITypes;
+  System.SysUtils, System.Classes, Data.DB, Datasnap.DBClient,
+  Vcl.Dialogs, Data.FMTBcd, Data.SqlExpr, Vcl.Controls,
+  Winapi.Windows, Vcl.Forms, Datasnap.Provider, System.UITypes;
 
 type
   TdmDadosGlobal = class(TDataModule)
@@ -13,7 +13,6 @@ type
     cdsUfufdescr: TStringField;
     cdsUfuf: TStringField;
     dsUf: TDataSource;
-    ACBrValidador: TACBrValidador;
     cdsStatusAssinante: TClientDataSet;
     cdsStatusAssinanteCodigo: TIntegerField;
     cdsStatusAssinanteDescr: TStringField;
@@ -27,7 +26,6 @@ type
     cdsStatusAssinante2Descr: TStringField;
     sqlDataHoraBanco: TSQLDataSet;
     sqlDataHoraBancodatahora: TSQLTimeStampField;
-    ACBrExtenso: TACBrExtenso;
     cdsLookupSimNao2: TClientDataSet;
     cdsLookupSimNao2Descr: TStringField;
     cdsLookupSimNao2Codigo: TStringField;
@@ -333,26 +331,105 @@ end;
 
 function TdmDadosGlobal.ValidarCEP(ACEP: String): Boolean;
 begin
-  ACBrValidador.TipoDocto := docCEP;
-  ACBrValidador.Documento := AnsiString(ACEP);
-
-  Result := ACBrValidador.Validar;
+  Result := true;
 end;
 
 function TdmDadosGlobal.ValidarCNPJ(ACNPJ: String): Boolean;
+var
+  n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12: Integer;
+  d1, d2: Integer;
+  digitado, calculado: string;
 begin
-  ACBrValidador.TipoDocto := docCNPJ;
-  ACBrValidador.Documento := AnsiString(ACNPJ);
+  ACNPJ := GetSoNumeros(ACNPJ);
 
-  Result := ACBrValidador.Validar;
+  if Length(ACNPJ) <> 14 then
+  begin
+    ValidarCNPJ := false;
+    exit;
+  end;
+
+  n1 := StrToInt(ACNPJ[1]);
+  n2 := StrToInt(ACNPJ[2]);
+  n3 := StrToInt(ACNPJ[3]);
+  n4 := StrToInt(ACNPJ[4]);
+  n5 := StrToInt(ACNPJ[5]);
+  n6 := StrToInt(ACNPJ[6]);
+  n7 := StrToInt(ACNPJ[7]);
+  n8 := StrToInt(ACNPJ[8]);
+  n9 := StrToInt(ACNPJ[9]);
+  n10 := StrToInt(ACNPJ[10]);
+  n11 := StrToInt(ACNPJ[11]);
+  n12 := StrToInt(ACNPJ[12]);
+
+  d1 := n12 * 2 + n11 * 3 + n10 * 4 + n9 * 5 + n8 * 6 + n7 * 7 + n6 * 8 + n5 * 9 + n4 * 2 + n3 * 3 + n2 * 4 + n1 * 5;
+  d1 := 11 - (d1 mod 11);
+
+  if d1 >= 10 then
+    d1 := 0;
+
+  d2 := d1 * 2 + n12 * 3 + n11 * 4 + n10 * 5 + n9 * 6 + n8 * 7 + n7 * 8 + n6 * 9 + n5 * 2 + n4 * 3 + n3 * 4 + n2 * 5 + n1 * 6;
+  d2 := 11 - (d2 mod 11);
+
+  if d2 >= 10 then
+    d2 := 0;
+
+  calculado := inttostr(d1) + inttostr(d2);
+  digitado := ACNPJ[13] + ACNPJ[14];
+
+  if calculado = digitado then
+    ValidarCNPJ := true
+  else
+    ValidarCNPJ := false;
+
 end;
 
 function TdmDadosGlobal.ValidarCPF(ACPF: String): Boolean;
+var
+  n1, n2, n3, n4, n5, n6, n7, n8, n9: Integer;
+  d1, d2: Integer;
+  digitado, calculado: string;
 begin
-  ACBrValidador.TipoDocto := docCPF;
-  ACBrValidador.Documento := AnsiString(ACPF);
+  ACPF := GetSoNumeros(ACPF);
 
-  Result := ACBrValidador.Validar;
+  if Length(ACPF) <> 11 then
+  begin
+    ValidarCPF := false;
+    exit;
+  end;
+
+  // Pega os 9 primeiros números
+  n1 := StrToInt(ACPF[1]);
+  n2 := StrToInt(ACPF[2]);
+  n3 := StrToInt(ACPF[3]);
+  n4 := StrToInt(ACPF[4]);
+  n5 := StrToInt(ACPF[5]);
+  n6 := StrToInt(ACPF[6]);
+  n7 := StrToInt(ACPF[7]);
+  n8 := StrToInt(ACPF[8]);
+  n9 := StrToInt(ACPF[9]);
+
+  // Faz o cálculo do primeiro dígito
+  d1 := n9 * 2 + n8 * 3 + n7 * 4 + n6 * 5 + n5 * 6 + n4 * 7 + n3 * 8 + n2 * 9
+    + n1 * 10;
+  d1 := 11 - (d1 mod 11);
+
+  if d1 >= 10 then
+    d1 := 0; // Se o cálculo for igual a 10 então ele é zero
+
+  // Faz o calculo do segundo digito
+  d2 := d1 * 2 + n9 * 3 + n8 * 4 + n7 * 5 + n6 * 6 + n5 * 7 + n4 * 8 + n3 * 9 +
+    n2 * 10 + n1 * 11;
+  d2 := 11 - (d2 mod 11);
+
+  if d2 >= 10 then
+    d2 := 0; // se o cálculo for igual a 10 então ele é zero
+
+  calculado := inttostr(d1) + inttostr(d2); // Define o que foi calculado
+  digitado := ACPF[10] + ACPF[11]; // Define o que foi digitado
+
+  // Se o número que foi calculado for igual ao que foi digitado
+  // a função retorna verdadeiro, senão retorna falso
+  Result := (calculado = digitado);
 end;
 
 function TdmDadosGlobal.ValidarEmail(AEmail: string): Boolean;
@@ -498,8 +575,171 @@ begin
 end;
 
 function TdmDadosGlobal.ValorPorExtenso(AValor: Double): String;
+const
+  unidade: array [1 .. 19] of string = ('Um', 'Dois', 'Três', 'Quatro', 'Cinco',
+    'Seis', 'Sete', 'Oito', 'Nove', 'Dez', 'Onze', 'Doze', 'Treze', 'Quatorze',
+    'Quinze', 'Dezesseis', 'Dezessete', 'Dezoito', 'Dezenove');
+
+  dezena: array [2 .. 9] of string = ('Vinte', 'Trinta', 'Quarenta',
+    'Cinquenta', 'Sessenta', 'Setenta', 'Oitenta', 'Noventa');
+
+  centena: array [1 .. 9] of string = ('Cento', 'Duzentos', 'Trezentos',
+    'Quatrocentos', 'Quinhentos', 'Seiscentos', 'Setecentos', 'Oitocentos',
+    'Novecentos');
+
+  qualificaS: array [0 .. 4] of string = ('', 'Mil', 'Milhão', 'Bilhão',
+    'Trilhão');
+
+  qualificaP: array [0 .. 4] of string = ('', 'Mil', 'Milhões', 'Bilhões',
+    'Trilhões');
+var
+  inteiro: Int64;
+  resto: real;
+  vlrS, s, saux, vlrP, centavos: string;
+  n, unid, dez, cent, tam, I: Integer;
+  umReal, tem: Boolean;
 begin
-  Result := ACBrExtenso.ValorToTexto(AValor);
+  if AValor = 0 then
+  begin
+    valorPorExtenso := 'Zero';
+    exit;
+  end;
+
+  inteiro := trunc(AValor); // parte inteira do valor
+  resto := AValor - inteiro; // parte fracionária do valor
+  vlrS := inttostr(inteiro);
+  if (length(vlrS) > 15) then
+  begin
+    valorPorExtenso := 'Erro: valor superior a 999 trilhões.';
+    exit;
+  end;
+
+  s := '';
+  centavos := inttostr(round(resto * 100));
+
+  // definindo o extenso da parte inteira do valor
+  i := 0;
+  umReal := false; tem := false;
+
+  while (vlrS <> '0') do
+  begin
+    tam := length(vlrS);
+    // retira do valor a 1a. parte, 2a. parte, por exemplo, para 123456789:
+    // 1a. parte = 789 (centena)
+    // 2a. parte = 456 (mil)
+    // 3a. parte = 123 (milhões)
+
+    if (tam > 3) then
+    begin
+      vlrP := copy(vlrS, tam-2, tam);
+      vlrS := copy(vlrS, 1, tam-3);
+    end
+    else
+    begin // última parte do valor
+      vlrP := vlrS;
+      vlrS := '0';
+    end;
+
+    if (vlrP <> '000') then
+    begin
+      saux := '';
+      if (vlrP = '100') then
+        saux := 'cem'
+      else
+      begin
+        n := strtoint(vlrP);        // para n = 371, tem-se:
+        cent := n div 100;          // cent = 3 (centena trezentos)
+        dez := (n mod 100) div 10;  // dez  = 7 (dezena setenta)
+        unid := (n mod 100) mod 10; // unid = 1 (unidade um)
+
+        if (cent <> 0) then
+          saux := centena[cent];
+
+        if ((dez <> 0) or (unid <> 0)) then
+        begin
+          if ((n mod 100) <= 19) then
+          begin
+            if (length(saux) <> 0) then
+              saux := saux + ' e ' + unidade[n mod 100]
+            else
+              saux := unidade[n mod 100];
+          end
+          else
+          begin
+            if (length(saux) <> 0) then
+              saux := saux + ' e ' + dezena[dez]
+            else
+              saux := dezena[dez];
+
+            if (unid <> 0) then
+              if (length(saux) <> 0) then
+                saux := saux + ' e ' + unidade[unid]
+              else
+                saux := unidade[unid];
+          end;
+        end;
+      end;
+
+      if ((vlrP = '1') or (vlrP = '001')) then
+      begin
+        if (i = 0) then // 1a. parte do valor (um real)
+          umReal := true
+        else
+          saux := saux + ' ' + qualificaS[i];
+      end
+      else if (i <> 0) then
+        saux := saux + ' ' + qualificaP[i];
+
+      if (length(s) <> 0) then
+        s := saux + ', ' + s
+      else
+        s := saux;
+    end;
+
+    if (((i = 0) or (i = 1)) and (length(s) <> 0)) then
+      tem := true; // tem centena ou mil no valor
+
+    i := i + 1; // próximo qualificador: 1- mil, 2- milhão, 3- bilhão, ...
+  end;
+
+  if (length(s) <> 0) then
+  begin
+    if (umReal) then
+      s := s + ' Real'
+    else if (tem) then
+      s := s + ' Reais'
+    else
+      s := s + ' de Reais';
+  end;
+
+  // definindo o extenso dos centavos do valor
+  if (centavos <> '0') then // valor com centavos
+  begin
+    if (length(s) <> 0) then  // se não é valor somente com centavos
+      s := s + ' e ';
+
+    if (centavos = '1') then
+      s := s + 'Um Centavo'
+    else
+    begin
+      n := strtoint(centavos);
+
+      if (n <= 19) then
+        s := s + unidade[n]
+      else
+      begin                 // para n = 37, tem-se:
+        unid := n mod 10;   // unid = 37 % 10 = 7 (unidade sete)
+        dez := n div 10;    // dez  = 37 / 10 = 3 (dezena trinta)
+        s := s + dezena[dez];
+        if (unid <> 0) then
+          s := s + ' e ' + unidade[unid];
+      end;
+
+      s := s + ' Centavos';
+    end;
+  end;
+
+  valorPorExtenso := s;
 end;
 
 end.

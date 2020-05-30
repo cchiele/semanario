@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, Data.FMTBcd, Data.DB, Datasnap.DBClient,
-  Datasnap.Provider, Data.SqlExpr, Vcl.Dialogs, System.UITypes, ACBrValidador,
+  Datasnap.Provider, Data.SqlExpr, Vcl.Dialogs, System.UITypes,
   Data.DBXCommon;
 
 type
@@ -126,11 +126,6 @@ begin
 
   if trim(cdsTblcepcepcep.AsString) = EmptyStr then
     raise Exception.Create('CEP não pode ser nulo.');
-
-  // Validar CEP
-  dmDadosGlobal.ACBrValidador.TipoDocto := docCEP;
-  dmDadosGlobal.ACBrValidador.Documento := cdsTblcepcepcep.AsString;
-  dmDadosGlobal.ACBrValidador.Validar;
 
 end;
 

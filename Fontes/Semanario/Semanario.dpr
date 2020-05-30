@@ -3,7 +3,6 @@ program Semanario;
 uses
   Vcl.Forms,
   uPrincipal in 'uPrincipal.pas' {frmPrincipal},
-  uRibbonDynamic in 'uRibbonDynamic.pas',
   uConexao in 'uConexao.pas' {dmConexao: TDataModule},
   uUsuario in 'uUsuario.pas' {dmUsuario: TDataModule},
   uLogin in 'uLogin.pas' {frmLogin},

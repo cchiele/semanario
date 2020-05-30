@@ -152,6 +152,23 @@ object frmLocalizarCep: TfrmLocalizarCep
       Height = 13
       Caption = 'Estado'
     end
+    object lblAjuda: TLabel
+      Left = 591
+      Top = 16
+      Width = 148
+      Height = 13
+      Cursor = crHandPoint
+      Caption = 'Veja como melhorar a pesquisa'
+      Color = clBtnFace
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlue
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      OnClick = lblAjudaClick
+    end
     object DBLCBUf: TDBLookupComboBox
       Left = 16
       Top = 40
@@ -194,58 +211,6 @@ object frmLocalizarCep: TfrmLocalizarCep
       Images = frmPrincipal.ImageList16
       TabOrder = 3
       OnClick = btnPesquisarCepClick
-    end
-    object ScreenTipsPopup1: TScreenTipsPopup
-      Left = 337
-      Top = 24
-      Width = 14
-      Height = 14
-      Associate = edtEndereco
-      Glyph.Data = {
-        07544269746D61709E020000424D9E0200000000000036000000280000000E00
-        00000E000000010018000000000068020000C40E0000C40E0000000000000000
-        0000FF0099FF0099FF0099B8B8B8DADADABDAFAAC7ACA2C9AEA3C1B3ADE7E7E7
-        CFCFCFFF0099FF0099FF00990000FF0099FF0099C7C7C7BDA49BA65336B85029
-        BC532AC1572BC55A2CB86039CBB0A4D9D9D9FF0099FF00990000FF0099C7C7C7
-        9D6B5CAE4927B24C28BC6241DCBCAFDDAF9CC2582BC5592CC4592BB37E68D9D9
-        D9FF00990000C7C7C7B9A099A84426AC4727B14B28C18E7CCFCFCFE3E3E3BF55
-        2AC0562BC0562BBE552AC8AEA4CFCFCF0000DCDCDCA4543AA84627AA4626AE49
-        27B25231B5826FC4836BBA522ABB532ABB532ABA5229AA5636E7E7E70000BEB1
-        ADB0502FB65631A84426AB4727AD5B3FA8A8A8AB9188B64F29B75029B64F29B5
-        4E29B34D28BFB1AC0000C2ABA3B35633BD6138B85932A84426AB4727A2A2A2A7
-        A7A7AE5C3FB24C28B24C28B14B28AF4A27C4ABA20000C8B2AAB55B37BD643BC2
-        693CBE6338AF4E2CA66855A8A8A8A9A3A1B3684EAD4827AC4827AB4726C2A9A1
-        0000CFC6C2B96744BC673EC06A3EC26B3EC46C3DBF6538BF907CC7C7C7CFC2BE
-        AA4727AE4B29AC4929BCAFAB0000EBEBEBC89780BB6A42BE6C41C98B6ADCC1B2
-        CF9474DBBAA9E8E8E8EEEEEEC06137BA5932A6553BDBDBDB0000B8B8B8EBE3E0
-        C2805DBB6F45CA8F6FF4F4F4F5F5F5F5F5F5F6F6F6E5C9BCBB5E37B25230C0A7
-        A0C7C7C70000FF0099CECECEDBCAC1C2835FBE7952D8AE96E9D1C4EEDACFD9AA
-        93BF6C47B45936A37465C7C7C7FF00990000FF0099FF0099DCDCDCEBE4E1C9A0
-        87BC7751B96F46BA6C44B96740B06B4DC1AAA2C7C7C7FF0099FF00990000FF00
-        99FF0099FF0099D6D6D6ECECECD3CCC8D1BFB5CEBBB2C9BFBADEDEDEB8B8B8FF
-        0099FF0099FF00990000}
-      PopupType = ptCustom
-      ScreenTip.Description.Strings = (
-        
-          '1) N'#227'o '#233' necess'#225'rio preencher o endere'#231'o completo, mas o endere'#231 +
-          'o deve ter no m'#237'nimo 3 caracteres;'
-        ''
-        '2) O endere'#231'o pode ou n'#227'o ser acentu'#225'rio, tanto faz;'
-        ''
-        '3) N'#227'o informar no endere'#231'o o n'#250'mero da casa, apto, etc;'
-        ''
-        
-          '4) Nomes de ruas com n'#250'meros, devemos substituir o n'#250'mero pelo e' +
-          'xtenso, exemplo:'
-        'RUA 13 DE MAIO -> RUA TREZE DE MAIO'
-        ''
-        '5) Substituir abreviaturas, conforme abaixo:'
-        'DR. -> DOUTOR'
-        'TV. -> TRAVESSA'
-        'AV. -> AVENIDA'
-        'GEN. -> GENERAL')
-      ScreenTip.Header = 'Dicas para realizar a busca'
-      ScreenTipManager = frmPrincipal.ScreenTipsManager
     end
   end
   object cdsResultado: TClientDataSet
@@ -296,7 +261,7 @@ object frmLocalizarCep: TfrmLocalizarCep
     AcceptCharset = 'UTF-8, *;q=0.8'
     BaseURL = 'https://viacep.com.br'
     Params = <>
-    HandleRedirects = True
+    SecureProtocols = [TLS12]
     Left = 104
     Top = 176
   end
@@ -324,5 +289,10 @@ object frmLocalizarCep: TfrmLocalizarCep
     OnTimer = TimerInicioTimer
     Left = 136
     Top = 257
+  end
+  object BalloonHint1: TBalloonHint
+    Delay = 100
+    Left = 672
+    Top = 160
   end
 end

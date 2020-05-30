@@ -4,7 +4,7 @@ object frmCadAssinantes: TfrmCadAssinantes
   Top = 110
   Caption = 'Cadastro de Assinantes'
   ClientHeight = 579
-  ClientWidth = 1010
+  ClientWidth = 1030
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -17,1779 +17,16 @@ object frmCadAssinantes: TfrmCadAssinantes
   OnCloseQuery = FormCloseQuery
   PixelsPerInch = 96
   TextHeight = 13
-  object pnlManutencaoAssinatura: TPanel
-    Left = 0
-    Top = 0
-    Width = 1010
-    Height = 579
-    Align = alClient
-    Color = clWindow
-    ParentBackground = False
-    TabOrder = 2
-    object Panel7: TPanel
-      Left = 1
-      Top = 537
-      Width = 1008
-      Height = 41
-      Align = alBottom
-      BevelOuter = bvLowered
-      TabOrder = 4
-      DesignSize = (
-        1008
-        41)
-      object Label58: TLabel
-        Left = 1027
-        Top = 11
-        Width = 145
-        Height = 16
-        Anchors = [akTop, akRight]
-        Caption = '* Campos obrigat'#243'rios'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitLeft = 819
-      end
-      object Label59: TLabel
-        Left = 849
-        Top = 11
-        Width = 145
-        Height = 16
-        Anchors = [akTop, akRight]
-        Caption = '* Campos obrigat'#243'rios'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitLeft = 732
-      end
-      object JvImgBtn7: TJvImgBtn
-        Left = 40
-        Top = 8
-        Width = 75
-        Height = 25
-        Action = ActionOkAssinatura
-        Default = True
-        ImageIndex = 9
-        Images = frmPrincipal.ImageList16
-        ModalResult = 1
-        TabOrder = 0
-        Kind = bkOK
-      end
-      object JvImgBtn8: TJvImgBtn
-        Left = 121
-        Top = 8
-        Width = 75
-        Height = 25
-        Action = ActionCancelarAssinatura
-        Cancel = True
-        ImageIndex = 8
-        Images = frmPrincipal.ImageList16
-        ModalResult = 2
-        TabOrder = 1
-        Kind = bkCancel
-      end
-    end
-    object GroupBox6: TGroupBox
-      Left = 41
-      Top = 19
-      Width = 776
-      Height = 86
-      Caption = 'Assinante'
-      TabOrder = 0
-      object Label60: TLabel
-        Left = 15
-        Top = 26
-        Width = 37
-        Height = 13
-        Caption = 'C'#243'digo:'
-        FocusControl = DBEdit21
-      end
-      object Label61: TLabel
-        Left = 15
-        Top = 52
-        Width = 31
-        Height = 13
-        Caption = 'Nome:'
-        FocusControl = DBEdit43
-      end
-      object DBEdit21: TDBEdit
-        Left = 58
-        Top = 22
-        Width = 74
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'asscod'
-        DataSource = dsTblass
-        ReadOnly = True
-        TabOrder = 0
-      end
-      object DBEdit43: TDBEdit
-        Left = 58
-        Top = 49
-        Width = 626
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'assnome'
-        DataSource = dsTblass
-        ReadOnly = True
-        TabOrder = 1
-      end
-    end
-    object GroupBox7: TGroupBox
-      Left = 41
-      Top = 111
-      Width = 456
-      Height = 281
-      Caption = 'Assinatura'
-      TabOrder = 1
-      object Label62: TLabel
-        Left = 15
-        Top = 28
-        Width = 37
-        Height = 13
-        Caption = 'C'#243'digo:'
-        FocusControl = DBEdit44
-      end
-      object Label65: TLabel
-        Left = 15
-        Top = 82
-        Width = 81
-        Height = 13
-        Caption = 'Data Assinatura:'
-        FocusControl = JvDBDateEdit2
-      end
-      object Label66: TLabel
-        Left = 15
-        Top = 109
-        Width = 85
-        Height = 13
-        Caption = 'Data Vencimento:'
-        FocusControl = JvDBDateEdit3
-      end
-      object Label67: TLabel
-        Left = 15
-        Top = 140
-        Width = 82
-        Height = 13
-        Caption = 'Valor Assinatura:'
-        FocusControl = DBEdit48
-      end
-      object Label68: TLabel
-        Left = 15
-        Top = 195
-        Width = 77
-        Height = 13
-        Caption = 'Valor Pendente:'
-        FocusControl = DBEdit49
-      end
-      object Label71: TLabel
-        Left = 15
-        Top = 223
-        Width = 54
-        Height = 13
-        Caption = 'Cancelada:'
-        FocusControl = DBLookupComboBox6
-      end
-      object Label64: TLabel
-        Left = 15
-        Top = 54
-        Width = 93
-        Height = 13
-        Caption = 'Tipo de Assinatura:'
-        FocusControl = DBLookupComboBoxTipo
-      end
-      object Label63: TLabel
-        Left = 256
-        Top = 57
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label69: TLabel
-        Left = 218
-        Top = 84
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label70: TLabel
-        Left = 218
-        Top = 109
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label72: TLabel
-        Left = 218
-        Top = 142
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label73: TLabel
-        Left = 185
-        Top = 224
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label1: TLabel
-        Left = 225
-        Top = 223
-        Width = 111
-        Height = 13
-        Caption = 'Data de cancelamento:'
-        FocusControl = DBLookupComboBox6
-      end
-      object Label9: TLabel
-        Left = 15
-        Top = 167
-        Width = 76
-        Height = 13
-        Caption = 'Valor Desconto:'
-        FocusControl = DBEdit4
-      end
-      object Label10: TLabel
-        Left = 218
-        Top = 169
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label11: TLabel
-        Left = 15
-        Top = 249
-        Width = 44
-        Height = 13
-        Caption = 'Cortesia:'
-        FocusControl = DBLookupComboBox6
-      end
-      object Label14: TLabel
-        Left = 185
-        Top = 251
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object DBEdit44: TDBEdit
-        Left = 115
-        Top = 25
-        Width = 61
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'adacod'
-        DataSource = dsTblada
-        ReadOnly = True
-        TabOrder = 0
-      end
-      object DBEdit48: TDBEdit
-        Left = 115
-        Top = 137
-        Width = 97
-        Height = 21
-        DataField = 'adavl'
-        DataSource = dsTblada
-        TabOrder = 4
-      end
-      object DBEdit49: TDBEdit
-        Left = 115
-        Top = 192
-        Width = 97
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'adavlpend'
-        DataSource = dsTblada
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        ReadOnly = True
-        TabOrder = 6
-      end
-      object DBLookupComboBox6: TDBLookupComboBox
-        Left = 115
-        Top = 219
-        Width = 64
-        Height = 21
-        DataField = 'LookupAdacancel'
-        DataSource = dsTblada
-        TabOrder = 7
-        OnClick = DBLookupComboBox6Click
-      end
-      object DBLookupComboBoxTipo: TDBLookupComboBox
-        Left = 115
-        Top = 52
-        Width = 135
-        Height = 21
-        DataField = 'LookupAdatipo'
-        DataSource = dsTblada
-        TabOrder = 1
-      end
-      object JvDBDateEdit2: TJvDBDateEdit
-        Left = 115
-        Top = 79
-        Width = 97
-        Height = 21
-        DataField = 'adadtini'
-        DataSource = dsTblada
-        CheckOnExit = True
-        ShowNullDate = False
-        TabOrder = 2
-      end
-      object JvDBDateEdit3: TJvDBDateEdit
-        Left = 115
-        Top = 106
-        Width = 97
-        Height = 21
-        DataField = 'adadtvenc'
-        DataSource = dsTblada
-        CheckOnExit = True
-        ShowNullDate = False
-        TabOrder = 3
-      end
-      object JvDBedtDataCancelamento: TJvDBDateEdit
-        Left = 341
-        Top = 219
-        Width = 97
-        Height = 21
-        DataField = 'adadtcancel'
-        DataSource = dsTblada
-        CheckOnExit = True
-        ShowNullDate = False
-        TabOrder = 8
-      end
-      object DBEdit4: TDBEdit
-        Left = 115
-        Top = 164
-        Width = 97
-        Height = 21
-        DataField = 'adavldesc'
-        DataSource = dsTblada
-        TabOrder = 5
-      end
-      object DBLookupComboBox5: TDBLookupComboBox
-        Left = 115
-        Top = 246
-        Width = 64
-        Height = 21
-        DataField = 'LookupAdacortesia'
-        DataSource = dsTblada
-        TabOrder = 9
-      end
-    end
-    object GroupBox8: TGroupBox
-      Left = 41
-      Top = 398
-      Width = 776
-      Height = 56
-      Caption = 'Observa'#231#227'o'
-      TabOrder = 2
-      object DBEdit50: TDBEdit
-        Left = 12
-        Top = 21
-        Width = 749
-        Height = 21
-        DataField = 'adaobs'
-        DataSource = dsTblada
-        TabOrder = 0
-      end
-    end
-    object GroupBox17: TGroupBox
-      Left = 503
-      Top = 111
-      Width = 314
-      Height = 281
-      Caption = 'Condi'#231#245'es de Pagamento'
-      Padding.Left = 5
-      Padding.Right = 5
-      Padding.Bottom = 5
-      TabOrder = 3
-      object Label12: TLabel
-        Left = 8
-        Top = 28
-        Width = 71
-        Height = 13
-        Caption = 'Qtde Parcelas:'
-        FocusControl = DBEdit44
-      end
-      object Label13: TLabel
-        Left = 8
-        Top = 55
-        Width = 73
-        Height = 13
-        Caption = '1'#186' Vencimento:'
-        FocusControl = DBEdit44
-      end
-      object edtPrimeiroVenc: TJvDateEdit
-        Left = 85
-        Top = 52
-        Width = 97
-        Height = 21
-        ShowNullDate = False
-        TabOrder = 1
-      end
-      object btnGerarParcelas: TJvImgBtn
-        Left = 201
-        Top = 21
-        Width = 105
-        Height = 52
-        Caption = 'Gerar Parcelas'
-        ImageIndex = 2
-        Images = ImageListGrid
-        TabOrder = 2
-        OnClick = btnGerarParcelasClick
-      end
-      object DBGridParcelas: TDBGrid
-        Left = 7
-        Top = 109
-        Width = 300
-        Height = 165
-        Align = alBottom
-        DataSource = dsTblcpa
-        TabOrder = 3
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'cpanroparc'
-            ReadOnly = True
-            Title.Caption = 'Parc.'
-            Width = 29
-            Visible = True
-          end
-          item
-            Alignment = taCenter
-            Expanded = False
-            FieldName = 'cpadtvenc'
-            Title.Alignment = taCenter
-            Title.Caption = 'Data Vencimento'
-            Width = 96
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'cpavl'
-            Title.Alignment = taRightJustify
-            Title.Caption = 'Valor da Parcela'
-            Width = 118
-            Visible = True
-          end>
-      end
-      object edtQtdeParcelas: TJvSpinEdit
-        Left = 85
-        Top = 24
-        Width = 41
-        Height = 21
-        MaxValue = 5.000000000000000000
-        Value = 4.000000000000000000
-        TabOrder = 0
-      end
-    end
-  end
-  object pnlManutencaoBaixa: TPanel
-    Left = 0
-    Top = 0
-    Width = 1010
-    Height = 579
-    Align = alClient
-    Color = clWindow
-    ParentBackground = False
-    TabOrder = 3
-    object Panel9: TPanel
-      Left = 1
-      Top = 537
-      Width = 1008
-      Height = 41
-      Align = alBottom
-      BevelOuter = bvLowered
-      TabOrder = 3
-      DesignSize = (
-        1008
-        41)
-      object Label74: TLabel
-        Left = 1027
-        Top = 11
-        Width = 145
-        Height = 16
-        Anchors = [akTop, akRight]
-        Caption = '* Campos obrigat'#243'rios'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitLeft = 819
-      end
-      object Label75: TLabel
-        Left = 849
-        Top = 11
-        Width = 145
-        Height = 16
-        Anchors = [akTop, akRight]
-        Caption = '* Campos obrigat'#243'rios'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitLeft = 732
-      end
-      object JvImgBtn9: TJvImgBtn
-        Left = 40
-        Top = 8
-        Width = 75
-        Height = 25
-        Action = ActionOkBaixa
-        Default = True
-        ImageIndex = 9
-        Images = frmPrincipal.ImageList16
-        ModalResult = 1
-        TabOrder = 0
-        Kind = bkOK
-      end
-      object JvImgBtn10: TJvImgBtn
-        Left = 121
-        Top = 8
-        Width = 75
-        Height = 25
-        Action = ActionCancelarBaixa
-        Cancel = True
-        ImageIndex = 8
-        Images = frmPrincipal.ImageList16
-        ModalResult = 2
-        TabOrder = 1
-        Kind = bkCancel
-      end
-    end
-    object GroupBox9: TGroupBox
-      Left = 41
-      Top = 19
-      Width = 704
-      Height = 86
-      Caption = 'Assinante'
-      TabOrder = 0
-      object Label76: TLabel
-        Left = 15
-        Top = 26
-        Width = 37
-        Height = 13
-        Caption = 'C'#243'digo:'
-        FocusControl = DBEdit45
-      end
-      object Label77: TLabel
-        Left = 15
-        Top = 52
-        Width = 31
-        Height = 13
-        Caption = 'Nome:'
-        FocusControl = DBEdit46
-      end
-      object DBEdit45: TDBEdit
-        Left = 58
-        Top = 22
-        Width = 74
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'asscod'
-        DataSource = dsTblass
-        ReadOnly = True
-        TabOrder = 0
-      end
-      object DBEdit46: TDBEdit
-        Left = 58
-        Top = 49
-        Width = 626
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'assnome'
-        DataSource = dsTblass
-        ReadOnly = True
-        TabOrder = 1
-      end
-    end
-    object GroupBox10: TGroupBox
-      Left = 41
-      Top = 111
-      Width = 704
-      Height = 117
-      Caption = 'Assinatura'
-      TabOrder = 1
-      object Label78: TLabel
-        Left = 15
-        Top = 28
-        Width = 37
-        Height = 13
-        Caption = 'C'#243'digo:'
-        FocusControl = DBEdit47
-      end
-      object Label79: TLabel
-        Left = 15
-        Top = 56
-        Width = 81
-        Height = 13
-        Caption = 'Data Assinatura:'
-      end
-      object Label80: TLabel
-        Left = 229
-        Top = 55
-        Width = 85
-        Height = 13
-        Caption = 'Data Vencimento:'
-      end
-      object Label81: TLabel
-        Left = 14
-        Top = 84
-        Width = 82
-        Height = 13
-        Caption = 'Valor Assinatura:'
-        FocusControl = DBEdit51
-      end
-      object Label82: TLabel
-        Left = 229
-        Top = 83
-        Width = 77
-        Height = 13
-        Caption = 'Valor Pendente:'
-        FocusControl = DBEdit52
-      end
-      object Label84: TLabel
-        Left = 229
-        Top = 28
-        Width = 24
-        Height = 13
-        Caption = 'Tipo:'
-      end
-      object DBEdit47: TDBEdit
-        Left = 106
-        Top = 25
-        Width = 61
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'adacod'
-        DataSource = dsTblada
-        ReadOnly = True
-        TabOrder = 0
-      end
-      object DBEdit51: TDBEdit
-        Left = 106
-        Top = 81
-        Width = 97
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'adavl'
-        DataSource = dsTblada
-        ReadOnly = True
-        TabOrder = 1
-      end
-      object DBEdit52: TDBEdit
-        Left = 320
-        Top = 80
-        Width = 97
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'adavlpend'
-        DataSource = dsTblada
-        ReadOnly = True
-        TabOrder = 2
-      end
-      object DBEdit53: TDBEdit
-        Left = 320
-        Top = 25
-        Width = 119
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'CalcAdatipo'
-        DataSource = dsTblada
-        ReadOnly = True
-        TabOrder = 3
-      end
-      object DBEdit54: TDBEdit
-        Left = 106
-        Top = 53
-        Width = 68
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'adadtini'
-        DataSource = dsTblada
-        ReadOnly = True
-        TabOrder = 4
-      end
-      object DBEdit55: TDBEdit
-        Left = 320
-        Top = 53
-        Width = 68
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'adadtvenc'
-        DataSource = dsTblada
-        ReadOnly = True
-        TabOrder = 5
-      end
-    end
-    object GroupBox11: TGroupBox
-      Left = 41
-      Top = 234
-      Width = 704
-      Height = 98
-      Caption = 'Baixa'
-      TabOrder = 2
-      object Label86: TLabel
-        Left = 196
-        Top = 55
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label83: TLabel
-        Left = 15
-        Top = 27
-        Width = 71
-        Height = 13
-        Caption = 'Data da Baixa:'
-      end
-      object Label85: TLabel
-        Left = 15
-        Top = 56
-        Width = 72
-        Height = 13
-        Caption = 'Valor da Baixa:'
-        FocusControl = dbedtValorBaixa
-      end
-      object dbedtValorBaixa: TDBEdit
-        Left = 94
-        Top = 53
-        Width = 96
-        Height = 21
-        DataField = 'bdavl'
-        DataSource = dsTblbda
-        TabOrder = 1
-      end
-      object dbedtDataBaixa: TJvDBDateEdit
-        Left = 93
-        Top = 25
-        Width = 97
-        Height = 21
-        TabStop = False
-        DataField = 'bdadt'
-        DataSource = dsTblbda
-        ReadOnly = True
-        CheckOnExit = True
-        Color = clBtnFace
-        ShowNullDate = False
-        TabOrder = 0
-      end
-    end
-  end
-  object pnlManutencaoHistorico: TPanel
-    Left = 0
-    Top = 0
-    Width = 1010
-    Height = 579
-    Align = alClient
-    Color = clWindow
-    ParentBackground = False
-    TabOrder = 4
-    object GroupBox12: TGroupBox
-      Left = 49
-      Top = 27
-      Width = 704
-      Height = 86
-      Caption = 'Assinante'
-      TabOrder = 0
-      object Label2: TLabel
-        Left = 15
-        Top = 26
-        Width = 37
-        Height = 13
-        Caption = 'C'#243'digo:'
-        FocusControl = DBEdit2
-      end
-      object Label3: TLabel
-        Left = 15
-        Top = 52
-        Width = 31
-        Height = 13
-        Caption = 'Nome:'
-        FocusControl = DBEdit3
-      end
-      object DBEdit2: TDBEdit
-        Left = 58
-        Top = 22
-        Width = 74
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'asscod'
-        DataSource = dsTblass
-        ReadOnly = True
-        TabOrder = 0
-      end
-      object DBEdit3: TDBEdit
-        Left = 58
-        Top = 49
-        Width = 626
-        Height = 21
-        TabStop = False
-        Color = clBtnFace
-        DataField = 'assnome'
-        DataSource = dsTblass
-        ReadOnly = True
-        TabOrder = 1
-      end
-    end
-    object Panel12: TPanel
-      Left = 1
-      Top = 537
-      Width = 1008
-      Height = 41
-      Align = alBottom
-      BevelOuter = bvLowered
-      TabOrder = 1
-      DesignSize = (
-        1008
-        41)
-      object Label4: TLabel
-        Left = 1027
-        Top = 11
-        Width = 145
-        Height = 16
-        Anchors = [akTop, akRight]
-        Caption = '* Campos obrigat'#243'rios'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitLeft = 819
-      end
-      object Label5: TLabel
-        Left = 849
-        Top = 11
-        Width = 145
-        Height = 16
-        Anchors = [akTop, akRight]
-        Caption = '* Campos obrigat'#243'rios'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitLeft = 732
-      end
-      object JvImgBtn14: TJvImgBtn
-        Left = 40
-        Top = 8
-        Width = 75
-        Height = 25
-        Action = ActionOkHistorico
-        Default = True
-        ImageIndex = 9
-        Images = frmPrincipal.ImageList16
-        ModalResult = 1
-        TabOrder = 0
-        Kind = bkOK
-      end
-      object JvImgBtn15: TJvImgBtn
-        Left = 121
-        Top = 8
-        Width = 75
-        Height = 25
-        Action = ActionCancelarHistorico
-        Cancel = True
-        ImageIndex = 8
-        Images = frmPrincipal.ImageList16
-        ModalResult = 2
-        TabOrder = 1
-        Kind = bkCancel
-      end
-    end
-    object GroupBox13: TGroupBox
-      Left = 49
-      Top = 126
-      Width = 704
-      Height = 228
-      Caption = 'Hist'#243'rico / Anota'#231#227'o'
-      TabOrder = 2
-      object Label6: TLabel
-        Left = 26
-        Top = 35
-        Width = 27
-        Height = 13
-        Caption = 'Data:'
-        FocusControl = JvDBDateEdit4
-      end
-      object Label7: TLabel
-        Left = 162
-        Top = 36
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object Label8: TLabel
-        Left = 686
-        Top = 67
-        Width = 15
-        Height = 16
-        AutoSize = False
-        Caption = '*'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clRed
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-      end
-      object JvDBDateEdit4: TJvDBDateEdit
-        Left = 59
-        Top = 33
-        Width = 97
-        Height = 21
-        DataField = 'hasdt'
-        DataSource = dsTblhas
-        CheckOnExit = True
-        ShowNullDate = False
-        TabOrder = 0
-      end
-      object DBMemoHasdescr: TDBMemo
-        Left = 26
-        Top = 70
-        Width = 655
-        Height = 131
-        DataField = 'hasdescr'
-        DataSource = dsTblhas
-        TabOrder = 1
-      end
-    end
-  end
-  object pnlConsulta: TPanel
-    Left = 0
-    Top = 0
-    Width = 1010
-    Height = 579
-    Align = alClient
-    Color = clWindow
-    Padding.Left = 5
-    Padding.Top = 5
-    Padding.Right = 5
-    Padding.Bottom = 5
-    ParentBackground = False
-    TabOrder = 0
-    object GroupBox2: TGroupBox
-      Left = 6
-      Top = 62
-      Width = 998
-      Height = 511
-      Align = alClient
-      Caption = 'Resultado da pesquisa'
-      Padding.Left = 5
-      Padding.Top = 5
-      Padding.Right = 5
-      Padding.Bottom = 5
-      TabOrder = 1
-      object dbGridAssinantes: TDBGrid
-        Left = 7
-        Top = 20
-        Width = 984
-        Height = 216
-        Align = alClient
-        DataSource = dsTblass
-        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-        TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
-        OnDrawColumnCell = dbGridAssinantesDrawColumnCell
-        OnDblClick = dbGridAssinantesDblClick
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'asscod'
-            Title.Caption = 'C'#243'digo'
-            Width = 56
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'assnome'
-            Title.Caption = 'Nome'
-            Width = 371
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'assfonecelul'
-            Title.Caption = 'Fone Celular'
-            Width = 90
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'assfoneresid'
-            Title.Caption = 'Fone Residencial'
-            Width = 90
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'CalcFonecomerCompleto'
-            Title.Caption = 'Fone Comercial'
-            Width = 119
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'CalcDescrStatus'
-            Title.Caption = 'Status'
-            Width = 70
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'CalcCodigoDescrZona'
-            Title.Caption = 'Zona'
-            Width = 217
-            Visible = True
-          end>
-      end
-      object PageControl: TPageControl
-        Left = 7
-        Top = 267
-        Width = 984
-        Height = 237
-        ActivePage = TabSheetAssinaturas
-        Align = alBottom
-        TabOrder = 1
-        object TabSheetAssinaturas: TTabSheet
-          Caption = 'Assinaturas'
-          ImageIndex = 1
-          object Panel1: TPanel
-            Left = 0
-            Top = 0
-            Width = 672
-            Height = 209
-            Align = alClient
-            BevelOuter = bvNone
-            TabOrder = 0
-            object Panel3: TPanel
-              Left = 0
-              Top = 180
-              Width = 672
-              Height = 29
-              Align = alBottom
-              BevelOuter = bvNone
-              TabOrder = 0
-              object JvImgBtn1: TJvImgBtn
-                Left = 0
-                Top = 3
-                Width = 75
-                Height = 25
-                Action = ActionNovaAssinatura
-                ImageIndex = 0
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 0
-              end
-              object JvImgBtn2: TJvImgBtn
-                Left = 81
-                Top = 3
-                Width = 75
-                Height = 25
-                Action = ActionEditarAssinatura
-                ImageIndex = 1
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 1
-              end
-              object JvImgBtn3: TJvImgBtn
-                Left = 162
-                Top = 3
-                Width = 75
-                Height = 25
-                Action = ActionExcluirAssinatura
-                ImageIndex = 2
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 2
-              end
-            end
-            object GroupBox14: TGroupBox
-              Left = 468
-              Top = 0
-              Width = 204
-              Height = 180
-              Align = alRight
-              Caption = 'Condi'#231#245'es de Pagamento'
-              TabOrder = 1
-              object DBGridCondicoes: TDBGrid
-                Left = 2
-                Top = 15
-                Width = 200
-                Height = 163
-                Align = alClient
-                DataSource = dsTblcpa
-                Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-                TabOrder = 0
-                TitleFont.Charset = DEFAULT_CHARSET
-                TitleFont.Color = clWindowText
-                TitleFont.Height = -11
-                TitleFont.Name = 'Tahoma'
-                TitleFont.Style = []
-                Columns = <
-                  item
-                    Expanded = False
-                    FieldName = 'cpanroparc'
-                    Title.Caption = ' '
-                    Width = 16
-                    Visible = True
-                  end
-                  item
-                    Alignment = taCenter
-                    Expanded = False
-                    FieldName = 'cpadtvenc'
-                    Title.Alignment = taCenter
-                    Title.Caption = 'Data Venci.'
-                    Width = 67
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'cpavl'
-                    Title.Alignment = taRightJustify
-                    Title.Caption = 'Valor Parcela'
-                    Width = 76
-                    Visible = True
-                  end>
-              end
-            end
-            object GroupBox16: TGroupBox
-              Left = 0
-              Top = 0
-              Width = 468
-              Height = 180
-              Align = alClient
-              Caption = 'Assinaturas'
-              TabOrder = 2
-              object DBGridAssinaturas: TDBGrid
-                Left = 2
-                Top = 15
-                Width = 464
-                Height = 163
-                Align = alClient
-                DataSource = dsTblada
-                Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-                TabOrder = 0
-                TitleFont.Charset = DEFAULT_CHARSET
-                TitleFont.Color = clWindowText
-                TitleFont.Height = -11
-                TitleFont.Name = 'Tahoma'
-                TitleFont.Style = []
-                OnDrawColumnCell = DBGridAssinaturasDrawColumnCell
-                Columns = <
-                  item
-                    Expanded = False
-                    FieldName = 'adacod'
-                    Title.Caption = 'Nro.'
-                    Width = 30
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'CalcAdatipo'
-                    Title.Caption = 'Tipo'
-                    Width = 74
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'adadtini'
-                    Title.Alignment = taCenter
-                    Title.Caption = 'Data In'#237'cio'
-                    Width = 67
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'adadtvenc'
-                    Title.Alignment = taCenter
-                    Title.Caption = 'Data Venci.'
-                    Width = 67
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'adavl'
-                    Font.Charset = DEFAULT_CHARSET
-                    Font.Color = clBlue
-                    Font.Height = -11
-                    Font.Name = 'Tahoma'
-                    Font.Style = []
-                    Title.Alignment = taRightJustify
-                    Title.Caption = 'Vl.Assinatura'
-                    Width = 70
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'adavldesc'
-                    Title.Alignment = taRightJustify
-                    Title.Caption = 'Vl.Desc.'
-                    Width = 45
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'adavlpend'
-                    Title.Alignment = taRightJustify
-                    Title.Caption = 'Vl.Pendente'
-                    Width = 70
-                    Visible = True
-                  end
-                  item
-                    Alignment = taCenter
-                    Expanded = False
-                    FieldName = 'CalcAdacancel'
-                    Title.Alignment = taCenter
-                    Title.Caption = 'Cancelada'
-                    Width = 59
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'adadtcancel'
-                    Title.Caption = 'Dt.Cancel.'
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'adaobs'
-                    Title.Caption = 'Observa'#231#227'o'
-                    Width = 400
-                    Visible = True
-                  end>
-              end
-            end
-          end
-          object Panel4: TPanel
-            Left = 672
-            Top = 0
-            Width = 304
-            Height = 209
-            Align = alRight
-            BevelOuter = bvNone
-            TabOrder = 1
-            object Panel5: TPanel
-              Left = 0
-              Top = 179
-              Width = 304
-              Height = 30
-              Align = alBottom
-              BevelOuter = bvNone
-              TabOrder = 0
-              object JvImgBtn4: TJvImgBtn
-                Left = 1
-                Top = 4
-                Width = 75
-                Height = 25
-                Action = ActionNovaBaixa
-                ImageIndex = 0
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 0
-              end
-              object JvImgBtn5: TJvImgBtn
-                Left = 82
-                Top = 4
-                Width = 75
-                Height = 25
-                Action = ActionEditarBaixa
-                ImageIndex = 1
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 1
-              end
-              object JvImgBtn6: TJvImgBtn
-                Left = 163
-                Top = 4
-                Width = 75
-                Height = 25
-                Action = ActionExcluirBaixa
-                ImageIndex = 2
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 2
-              end
-            end
-            object GroupBox15: TGroupBox
-              Left = 0
-              Top = 0
-              Width = 304
-              Height = 179
-              Align = alClient
-              Caption = 'Baixas'
-              TabOrder = 1
-              object DBGridBaixas: TDBGrid
-                Left = 2
-                Top = 15
-                Width = 300
-                Height = 162
-                Align = alClient
-                DataSource = dsTblbda
-                Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-                TabOrder = 0
-                TitleFont.Charset = DEFAULT_CHARSET
-                TitleFont.Color = clWindowText
-                TitleFont.Height = -11
-                TitleFont.Name = 'Tahoma'
-                TitleFont.Style = []
-                Columns = <
-                  item
-                    Expanded = False
-                    FieldName = 'bdacod'
-                    Title.Caption = 'Cod.'
-                    Width = 28
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'bdadt'
-                    Title.Caption = 'Data Baixa'
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'bdavl'
-                    Title.Alignment = taRightJustify
-                    Title.Caption = 'Valor Baixa'
-                    Width = 65
-                    Visible = True
-                  end
-                  item
-                    Expanded = False
-                    FieldName = 'usunome'
-                    Title.Caption = 'Usu'#225'rio da baixa'
-                    Width = 100
-                    Visible = True
-                  end>
-              end
-            end
-          end
-        end
-        object TabSheetHistorico: TTabSheet
-          Caption = 'Hist'#243'rico do Assinante'
-          ImageIndex = 1
-          object Splitter2: TSplitter
-            Left = 676
-            Top = 0
-            Height = 209
-            Align = alRight
-            ExplicitLeft = 749
-            ExplicitTop = -18
-          end
-          object Panel8: TPanel
-            Left = 0
-            Top = 0
-            Width = 676
-            Height = 209
-            Align = alClient
-            BevelOuter = bvNone
-            Caption = 'Panel8'
-            TabOrder = 0
-            object Panel11: TPanel
-              Left = 0
-              Top = 180
-              Width = 676
-              Height = 29
-              Align = alBottom
-              BevelOuter = bvNone
-              TabOrder = 0
-              object JvImgBtn11: TJvImgBtn
-                Left = 0
-                Top = 3
-                Width = 75
-                Height = 25
-                Action = ActionNovoHistorico
-                ImageIndex = 0
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 0
-              end
-              object JvImgBtn12: TJvImgBtn
-                Left = 81
-                Top = 3
-                Width = 75
-                Height = 25
-                Action = ActionEditarHistorico
-                ImageIndex = 1
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 1
-              end
-              object JvImgBtn13: TJvImgBtn
-                Left = 162
-                Top = 3
-                Width = 75
-                Height = 25
-                Action = ActionExcluirHistorico
-                ImageIndex = 2
-                Images = frmPrincipal.ImageList16
-                ParentShowHint = False
-                ShowHint = True
-                TabOrder = 2
-              end
-            end
-            object DBGridHistoricos: TDBGrid
-              Left = 0
-              Top = 0
-              Width = 676
-              Height = 180
-              Align = alClient
-              DataSource = dsTblhas
-              Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-              TabOrder = 1
-              TitleFont.Charset = DEFAULT_CHARSET
-              TitleFont.Color = clWindowText
-              TitleFont.Height = -11
-              TitleFont.Name = 'Tahoma'
-              TitleFont.Style = []
-              Columns = <
-                item
-                  Alignment = taCenter
-                  Expanded = False
-                  FieldName = 'hasdt'
-                  Title.Alignment = taCenter
-                  Title.Caption = 'Data'
-                  Width = 69
-                  Visible = True
-                end
-                item
-                  Expanded = False
-                  FieldName = 'CalcHasdescr'
-                  Title.Caption = 'Descri'#231#227'o / Anota'#231#227'o'
-                  Width = 574
-                  Visible = True
-                end>
-            end
-          end
-          object Panel10: TPanel
-            Left = 679
-            Top = 0
-            Width = 297
-            Height = 209
-            Align = alRight
-            BevelOuter = bvNone
-            Padding.Left = 5
-            Padding.Right = 5
-            Padding.Bottom = 5
-            TabOrder = 1
-            object GroupBox3: TGroupBox
-              Left = 5
-              Top = 0
-              Width = 287
-              Height = 175
-              Align = alClient
-              Caption = 'Descri'#231#227'o Completa'
-              Padding.Left = 5
-              Padding.Right = 5
-              Padding.Bottom = 5
-              TabOrder = 0
-              object DBMemo1: TDBMemo
-                Left = 7
-                Top = 15
-                Width = 273
-                Height = 153
-                TabStop = False
-                Align = alClient
-                Color = clBtnFace
-                DataField = 'hasdescr'
-                DataSource = dsTblhas
-                ReadOnly = True
-                ScrollBars = ssVertical
-                TabOrder = 0
-              end
-            end
-            object Panel13: TPanel
-              Left = 5
-              Top = 175
-              Width = 287
-              Height = 29
-              Align = alBottom
-              BevelOuter = bvNone
-              TabOrder = 1
-            end
-          end
-        end
-      end
-      object Panel2: TPanel
-        Left = 7
-        Top = 236
-        Width = 984
-        Height = 31
-        Align = alBottom
-        BevelOuter = bvNone
-        TabOrder = 2
-        DesignSize = (
-          984
-          31)
-        object lblTotalAssinantes: TLabel
-          Left = 773
-          Top = 4
-          Width = 211
-          Height = 13
-          Alignment = taRightJustify
-          Anchors = [akTop, akRight]
-          AutoSize = False
-          Caption = '0 assinante(s) encontrado(s)'
-        end
-        object btnNovoAssinante: TJvImgBtn
-          Left = 4
-          Top = 3
-          Width = 75
-          Height = 25
-          Action = ActionNovoAssinante
-          ImageIndex = 0
-          Images = frmPrincipal.ImageList16
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 0
-        end
-        object btnEditarAssinante: TJvImgBtn
-          Left = 85
-          Top = 3
-          Width = 75
-          Height = 25
-          Action = ActionEditarAssinante
-          ImageIndex = 1
-          Images = frmPrincipal.ImageList16
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 1
-        end
-        object btnExcluirAssinante: TJvImgBtn
-          Left = 166
-          Top = 3
-          Width = 75
-          Height = 25
-          Action = ActionExcluirAssinante
-          ImageIndex = 2
-          Images = frmPrincipal.ImageList16
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 2
-        end
-        object btnHistoricoAlteracoes: TJvImgBtn
-          Left = 284
-          Top = 3
-          Width = 152
-          Height = 25
-          Action = ActionHistoricoAlteracoes
-          ImageIndex = 10
-          Images = frmPrincipal.ImageList16
-          ParentShowHint = False
-          ShowHint = True
-          TabOrder = 3
-        end
-      end
-    end
-    object GroupBox1: TGroupBox
-      Left = 6
-      Top = 6
-      Width = 998
-      Height = 56
-      Align = alTop
-      Caption = 'Filtros'
-      TabOrder = 0
-      object edtNomeAssinante: TLabeledEdit
-        Left = 142
-        Top = 21
-        Width = 159
-        Height = 21
-        CharCase = ecUpperCase
-        EditLabel.Width = 31
-        EditLabel.Height = 13
-        EditLabel.Caption = 'Nome:'
-        LabelPosition = lpLeft
-        TabOrder = 1
-      end
-      object btnFiltrar: TJvImgBtn
-        Left = 875
-        Top = 18
-        Width = 75
-        Height = 25
-        Action = ActionFiltrar
-        ImageIndex = 3
-        Images = frmPrincipal.ImageList16
-        TabOrder = 6
-      end
-      object edtCodigo: TLabeledEdit
-        Left = 50
-        Top = 21
-        Width = 46
-        Height = 21
-        CharCase = ecUpperCase
-        EditLabel.Width = 37
-        EditLabel.Height = 13
-        EditLabel.Caption = 'C'#243'digo:'
-        LabelPosition = lpLeft
-        TabOrder = 0
-        Text = '0'
-        OnExit = edtCodigoExit
-        OnKeyPress = edtCodigoKeyPress
-      end
-      object edtEndereco: TLabeledEdit
-        Left = 371
-        Top = 21
-        Width = 159
-        Height = 21
-        CharCase = ecUpperCase
-        EditLabel.Width = 49
-        EditLabel.Height = 13
-        EditLabel.Caption = 'Endere'#231'o:'
-        LabelPosition = lpLeft
-        TabOrder = 2
-      end
-      object edtNroEndereco: TLabeledEdit
-        Left = 568
-        Top = 21
-        Width = 41
-        Height = 21
-        CharCase = ecUpperCase
-        EditLabel.Width = 25
-        EditLabel.Height = 13
-        EditLabel.Caption = 'Nro.:'
-        LabelPosition = lpLeft
-        TabOrder = 3
-      end
-      object edtCodigoZona: TLabeledEdit
-        Left = 667
-        Top = 21
-        Width = 36
-        Height = 21
-        CharCase = ecUpperCase
-        EditLabel.Width = 28
-        EditLabel.Height = 13
-        EditLabel.Caption = 'Zona:'
-        LabelPosition = lpLeft
-        TabOrder = 4
-      end
-      object edtDescrZona: TEdit
-        Left = 705
-        Top = 21
-        Width = 145
-        Height = 21
-        CharCase = ecUpperCase
-        TabOrder = 5
-      end
-    end
-  end
   object pnlManutencaoAssinante: TPanel
     Left = 0
     Top = 0
-    Width = 1010
+    Width = 1030
     Height = 579
     Align = alClient
     Color = clWindow
     ParentBackground = False
     TabOrder = 1
+    ExplicitWidth = 1010
     object Label21: TLabel
       Left = 41
       Top = 23
@@ -1995,16 +232,17 @@ object frmCadAssinantes: TfrmCadAssinantes
     object Panel6: TPanel
       Left = 1
       Top = 537
-      Width = 1008
+      Width = 1028
       Height = 41
       Align = alBottom
       BevelOuter = bvLowered
       TabOrder = 16
+      ExplicitWidth = 1008
       DesignSize = (
-        1008
+        1028
         41)
       object Label29: TLabel
-        Left = 854
+        Left = 874
         Top = 11
         Width = 145
         Height = 16
@@ -2529,6 +767,1802 @@ object frmCadAssinantes: TfrmCadAssinantes
       TabOrder = 6
     end
   end
+  object pnlManutencaoAssinatura: TPanel
+    Left = 0
+    Top = 0
+    Width = 1030
+    Height = 579
+    Align = alClient
+    Color = clWindow
+    ParentBackground = False
+    TabOrder = 2
+    ExplicitWidth = 1010
+    object Panel7: TPanel
+      Left = 1
+      Top = 537
+      Width = 1028
+      Height = 41
+      Align = alBottom
+      BevelOuter = bvLowered
+      TabOrder = 4
+      ExplicitWidth = 1008
+      DesignSize = (
+        1028
+        41)
+      object Label58: TLabel
+        Left = 1047
+        Top = 11
+        Width = 145
+        Height = 16
+        Anchors = [akTop, akRight]
+        Caption = '* Campos obrigat'#243'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 819
+      end
+      object Label59: TLabel
+        Left = 869
+        Top = 11
+        Width = 145
+        Height = 16
+        Anchors = [akTop, akRight]
+        Caption = '* Campos obrigat'#243'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 732
+      end
+      object JvImgBtn7: TJvImgBtn
+        Left = 40
+        Top = 8
+        Width = 75
+        Height = 25
+        Action = ActionOkAssinatura
+        Default = True
+        ImageIndex = 9
+        Images = frmPrincipal.ImageList16
+        ModalResult = 1
+        TabOrder = 0
+        Kind = bkOK
+      end
+      object JvImgBtn8: TJvImgBtn
+        Left = 121
+        Top = 8
+        Width = 75
+        Height = 25
+        Action = ActionCancelarAssinatura
+        Cancel = True
+        ImageIndex = 8
+        Images = frmPrincipal.ImageList16
+        ModalResult = 2
+        TabOrder = 1
+        Kind = bkCancel
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 41
+      Top = 19
+      Width = 776
+      Height = 86
+      Caption = 'Assinante'
+      TabOrder = 0
+      object Label60: TLabel
+        Left = 15
+        Top = 26
+        Width = 37
+        Height = 13
+        Caption = 'C'#243'digo:'
+        FocusControl = DBEdit21
+      end
+      object Label61: TLabel
+        Left = 15
+        Top = 52
+        Width = 31
+        Height = 13
+        Caption = 'Nome:'
+        FocusControl = DBEdit43
+      end
+      object DBEdit21: TDBEdit
+        Left = 58
+        Top = 22
+        Width = 74
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'asscod'
+        DataSource = dsTblass
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit43: TDBEdit
+        Left = 58
+        Top = 49
+        Width = 626
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'assnome'
+        DataSource = dsTblass
+        ReadOnly = True
+        TabOrder = 1
+      end
+    end
+    object GroupBox7: TGroupBox
+      Left = 41
+      Top = 111
+      Width = 456
+      Height = 281
+      Caption = 'Assinatura'
+      TabOrder = 1
+      object Label62: TLabel
+        Left = 15
+        Top = 28
+        Width = 37
+        Height = 13
+        Caption = 'C'#243'digo:'
+        FocusControl = DBEdit44
+      end
+      object Label65: TLabel
+        Left = 15
+        Top = 82
+        Width = 81
+        Height = 13
+        Caption = 'Data Assinatura:'
+        FocusControl = JvDBDateEdit2
+      end
+      object Label66: TLabel
+        Left = 15
+        Top = 109
+        Width = 85
+        Height = 13
+        Caption = 'Data Vencimento:'
+        FocusControl = JvDBDateEdit3
+      end
+      object Label67: TLabel
+        Left = 15
+        Top = 140
+        Width = 82
+        Height = 13
+        Caption = 'Valor Assinatura:'
+        FocusControl = DBEdit48
+      end
+      object Label68: TLabel
+        Left = 15
+        Top = 195
+        Width = 77
+        Height = 13
+        Caption = 'Valor Pendente:'
+        FocusControl = DBEdit49
+      end
+      object Label71: TLabel
+        Left = 15
+        Top = 223
+        Width = 54
+        Height = 13
+        Caption = 'Cancelada:'
+        FocusControl = DBLookupComboBox6
+      end
+      object Label64: TLabel
+        Left = 15
+        Top = 54
+        Width = 93
+        Height = 13
+        Caption = 'Tipo de Assinatura:'
+        FocusControl = DBLookupComboBoxTipo
+      end
+      object Label63: TLabel
+        Left = 256
+        Top = 57
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label69: TLabel
+        Left = 218
+        Top = 84
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label70: TLabel
+        Left = 218
+        Top = 109
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label72: TLabel
+        Left = 218
+        Top = 142
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label73: TLabel
+        Left = 185
+        Top = 224
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label1: TLabel
+        Left = 225
+        Top = 223
+        Width = 111
+        Height = 13
+        Caption = 'Data de cancelamento:'
+        FocusControl = DBLookupComboBox6
+      end
+      object Label9: TLabel
+        Left = 15
+        Top = 167
+        Width = 76
+        Height = 13
+        Caption = 'Valor Desconto:'
+        FocusControl = DBEdit4
+      end
+      object Label10: TLabel
+        Left = 218
+        Top = 169
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label11: TLabel
+        Left = 15
+        Top = 249
+        Width = 44
+        Height = 13
+        Caption = 'Cortesia:'
+        FocusControl = DBLookupComboBox6
+      end
+      object Label14: TLabel
+        Left = 185
+        Top = 251
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object DBEdit44: TDBEdit
+        Left = 115
+        Top = 25
+        Width = 61
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'adacod'
+        DataSource = dsTblada
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit48: TDBEdit
+        Left = 115
+        Top = 137
+        Width = 97
+        Height = 21
+        DataField = 'adavl'
+        DataSource = dsTblada
+        TabOrder = 4
+      end
+      object DBEdit49: TDBEdit
+        Left = 115
+        Top = 192
+        Width = 97
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'adavlpend'
+        DataSource = dsTblada
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 6
+      end
+      object DBLookupComboBox6: TDBLookupComboBox
+        Left = 115
+        Top = 219
+        Width = 64
+        Height = 21
+        DataField = 'LookupAdacancel'
+        DataSource = dsTblada
+        TabOrder = 7
+        OnClick = DBLookupComboBox6Click
+      end
+      object DBLookupComboBoxTipo: TDBLookupComboBox
+        Left = 115
+        Top = 52
+        Width = 135
+        Height = 21
+        DataField = 'LookupAdatipo'
+        DataSource = dsTblada
+        TabOrder = 1
+      end
+      object JvDBDateEdit2: TJvDBDateEdit
+        Left = 115
+        Top = 79
+        Width = 97
+        Height = 21
+        DataField = 'adadtini'
+        DataSource = dsTblada
+        CheckOnExit = True
+        ShowNullDate = False
+        TabOrder = 2
+      end
+      object JvDBDateEdit3: TJvDBDateEdit
+        Left = 115
+        Top = 106
+        Width = 97
+        Height = 21
+        DataField = 'adadtvenc'
+        DataSource = dsTblada
+        CheckOnExit = True
+        ShowNullDate = False
+        TabOrder = 3
+      end
+      object JvDBedtDataCancelamento: TJvDBDateEdit
+        Left = 341
+        Top = 219
+        Width = 97
+        Height = 21
+        DataField = 'adadtcancel'
+        DataSource = dsTblada
+        CheckOnExit = True
+        ShowNullDate = False
+        TabOrder = 8
+      end
+      object DBEdit4: TDBEdit
+        Left = 115
+        Top = 164
+        Width = 97
+        Height = 21
+        DataField = 'adavldesc'
+        DataSource = dsTblada
+        TabOrder = 5
+      end
+      object DBLookupComboBox5: TDBLookupComboBox
+        Left = 115
+        Top = 246
+        Width = 64
+        Height = 21
+        DataField = 'LookupAdacortesia'
+        DataSource = dsTblada
+        TabOrder = 9
+      end
+    end
+    object GroupBox8: TGroupBox
+      Left = 41
+      Top = 398
+      Width = 776
+      Height = 56
+      Caption = 'Observa'#231#227'o'
+      TabOrder = 2
+      object DBEdit50: TDBEdit
+        Left = 12
+        Top = 21
+        Width = 749
+        Height = 21
+        DataField = 'adaobs'
+        DataSource = dsTblada
+        TabOrder = 0
+      end
+    end
+    object GroupBox17: TGroupBox
+      Left = 503
+      Top = 111
+      Width = 314
+      Height = 281
+      Caption = 'Condi'#231#245'es de Pagamento'
+      Padding.Left = 5
+      Padding.Right = 5
+      Padding.Bottom = 5
+      TabOrder = 3
+      object Label12: TLabel
+        Left = 8
+        Top = 28
+        Width = 71
+        Height = 13
+        Caption = 'Qtde Parcelas:'
+        FocusControl = DBEdit44
+      end
+      object Label13: TLabel
+        Left = 8
+        Top = 55
+        Width = 73
+        Height = 13
+        Caption = '1'#186' Vencimento:'
+        FocusControl = DBEdit44
+      end
+      object edtPrimeiroVenc: TJvDateEdit
+        Left = 85
+        Top = 52
+        Width = 97
+        Height = 21
+        ShowNullDate = False
+        TabOrder = 1
+      end
+      object btnGerarParcelas: TJvImgBtn
+        Left = 201
+        Top = 21
+        Width = 105
+        Height = 52
+        Caption = 'Gerar Parcelas'
+        ImageIndex = 2
+        Images = ImageListGrid
+        TabOrder = 2
+        OnClick = btnGerarParcelasClick
+      end
+      object DBGridParcelas: TDBGrid
+        Left = 7
+        Top = 109
+        Width = 300
+        Height = 165
+        Align = alBottom
+        DataSource = dsTblcpa
+        TabOrder = 3
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'cpanroparc'
+            ReadOnly = True
+            Title.Caption = 'Parc.'
+            Width = 29
+            Visible = True
+          end
+          item
+            Alignment = taCenter
+            Expanded = False
+            FieldName = 'cpadtvenc'
+            Title.Alignment = taCenter
+            Title.Caption = 'Data Vencimento'
+            Width = 96
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'cpavl'
+            Title.Alignment = taRightJustify
+            Title.Caption = 'Valor da Parcela'
+            Width = 118
+            Visible = True
+          end>
+      end
+      object edtQtdeParcelas: TJvSpinEdit
+        Left = 85
+        Top = 24
+        Width = 41
+        Height = 21
+        MaxValue = 5.000000000000000000
+        Value = 4.000000000000000000
+        TabOrder = 0
+      end
+    end
+  end
+  object pnlManutencaoBaixa: TPanel
+    Left = 0
+    Top = 0
+    Width = 1030
+    Height = 579
+    Align = alClient
+    Color = clWindow
+    ParentBackground = False
+    TabOrder = 3
+    ExplicitWidth = 1010
+    object Panel9: TPanel
+      Left = 1
+      Top = 537
+      Width = 1028
+      Height = 41
+      Align = alBottom
+      BevelOuter = bvLowered
+      TabOrder = 3
+      ExplicitWidth = 1008
+      DesignSize = (
+        1028
+        41)
+      object Label74: TLabel
+        Left = 1047
+        Top = 11
+        Width = 145
+        Height = 16
+        Anchors = [akTop, akRight]
+        Caption = '* Campos obrigat'#243'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 819
+      end
+      object Label75: TLabel
+        Left = 869
+        Top = 11
+        Width = 145
+        Height = 16
+        Anchors = [akTop, akRight]
+        Caption = '* Campos obrigat'#243'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 732
+      end
+      object JvImgBtn9: TJvImgBtn
+        Left = 40
+        Top = 8
+        Width = 75
+        Height = 25
+        Action = ActionOkBaixa
+        Default = True
+        ImageIndex = 9
+        Images = frmPrincipal.ImageList16
+        ModalResult = 1
+        TabOrder = 0
+        Kind = bkOK
+      end
+      object JvImgBtn10: TJvImgBtn
+        Left = 121
+        Top = 8
+        Width = 75
+        Height = 25
+        Action = ActionCancelarBaixa
+        Cancel = True
+        ImageIndex = 8
+        Images = frmPrincipal.ImageList16
+        ModalResult = 2
+        TabOrder = 1
+        Kind = bkCancel
+      end
+    end
+    object GroupBox9: TGroupBox
+      Left = 41
+      Top = 19
+      Width = 704
+      Height = 86
+      Caption = 'Assinante'
+      TabOrder = 0
+      object Label76: TLabel
+        Left = 15
+        Top = 26
+        Width = 37
+        Height = 13
+        Caption = 'C'#243'digo:'
+        FocusControl = DBEdit45
+      end
+      object Label77: TLabel
+        Left = 15
+        Top = 52
+        Width = 31
+        Height = 13
+        Caption = 'Nome:'
+        FocusControl = DBEdit46
+      end
+      object DBEdit45: TDBEdit
+        Left = 58
+        Top = 22
+        Width = 74
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'asscod'
+        DataSource = dsTblass
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit46: TDBEdit
+        Left = 58
+        Top = 49
+        Width = 626
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'assnome'
+        DataSource = dsTblass
+        ReadOnly = True
+        TabOrder = 1
+      end
+    end
+    object GroupBox10: TGroupBox
+      Left = 41
+      Top = 111
+      Width = 704
+      Height = 117
+      Caption = 'Assinatura'
+      TabOrder = 1
+      object Label78: TLabel
+        Left = 15
+        Top = 28
+        Width = 37
+        Height = 13
+        Caption = 'C'#243'digo:'
+        FocusControl = DBEdit47
+      end
+      object Label79: TLabel
+        Left = 15
+        Top = 56
+        Width = 81
+        Height = 13
+        Caption = 'Data Assinatura:'
+      end
+      object Label80: TLabel
+        Left = 229
+        Top = 55
+        Width = 85
+        Height = 13
+        Caption = 'Data Vencimento:'
+      end
+      object Label81: TLabel
+        Left = 14
+        Top = 84
+        Width = 82
+        Height = 13
+        Caption = 'Valor Assinatura:'
+        FocusControl = DBEdit51
+      end
+      object Label82: TLabel
+        Left = 229
+        Top = 83
+        Width = 77
+        Height = 13
+        Caption = 'Valor Pendente:'
+        FocusControl = DBEdit52
+      end
+      object Label84: TLabel
+        Left = 229
+        Top = 28
+        Width = 24
+        Height = 13
+        Caption = 'Tipo:'
+      end
+      object DBEdit47: TDBEdit
+        Left = 106
+        Top = 25
+        Width = 61
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'adacod'
+        DataSource = dsTblada
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit51: TDBEdit
+        Left = 106
+        Top = 81
+        Width = 97
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'adavl'
+        DataSource = dsTblada
+        ReadOnly = True
+        TabOrder = 1
+      end
+      object DBEdit52: TDBEdit
+        Left = 320
+        Top = 80
+        Width = 97
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'adavlpend'
+        DataSource = dsTblada
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object DBEdit53: TDBEdit
+        Left = 320
+        Top = 25
+        Width = 119
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'CalcAdatipo'
+        DataSource = dsTblada
+        ReadOnly = True
+        TabOrder = 3
+      end
+      object DBEdit54: TDBEdit
+        Left = 106
+        Top = 53
+        Width = 68
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'adadtini'
+        DataSource = dsTblada
+        ReadOnly = True
+        TabOrder = 4
+      end
+      object DBEdit55: TDBEdit
+        Left = 320
+        Top = 53
+        Width = 68
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'adadtvenc'
+        DataSource = dsTblada
+        ReadOnly = True
+        TabOrder = 5
+      end
+    end
+    object GroupBox11: TGroupBox
+      Left = 41
+      Top = 234
+      Width = 704
+      Height = 98
+      Caption = 'Baixa'
+      TabOrder = 2
+      object Label86: TLabel
+        Left = 196
+        Top = 55
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label83: TLabel
+        Left = 15
+        Top = 27
+        Width = 71
+        Height = 13
+        Caption = 'Data da Baixa:'
+      end
+      object Label85: TLabel
+        Left = 15
+        Top = 56
+        Width = 72
+        Height = 13
+        Caption = 'Valor da Baixa:'
+        FocusControl = dbedtValorBaixa
+      end
+      object dbedtValorBaixa: TDBEdit
+        Left = 94
+        Top = 53
+        Width = 96
+        Height = 21
+        DataField = 'bdavl'
+        DataSource = dsTblbda
+        TabOrder = 1
+      end
+      object dbedtDataBaixa: TJvDBDateEdit
+        Left = 93
+        Top = 25
+        Width = 97
+        Height = 21
+        TabStop = False
+        DataField = 'bdadt'
+        DataSource = dsTblbda
+        ReadOnly = True
+        CheckOnExit = True
+        Color = clBtnFace
+        ShowNullDate = False
+        TabOrder = 0
+      end
+    end
+  end
+  object pnlManutencaoHistorico: TPanel
+    Left = 0
+    Top = 0
+    Width = 1030
+    Height = 579
+    Align = alClient
+    Color = clWindow
+    ParentBackground = False
+    TabOrder = 4
+    ExplicitWidth = 1010
+    object GroupBox12: TGroupBox
+      Left = 49
+      Top = 27
+      Width = 704
+      Height = 86
+      Caption = 'Assinante'
+      TabOrder = 0
+      object Label2: TLabel
+        Left = 15
+        Top = 26
+        Width = 37
+        Height = 13
+        Caption = 'C'#243'digo:'
+        FocusControl = DBEdit2
+      end
+      object Label3: TLabel
+        Left = 15
+        Top = 52
+        Width = 31
+        Height = 13
+        Caption = 'Nome:'
+        FocusControl = DBEdit3
+      end
+      object DBEdit2: TDBEdit
+        Left = 58
+        Top = 22
+        Width = 74
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'asscod'
+        DataSource = dsTblass
+        ReadOnly = True
+        TabOrder = 0
+      end
+      object DBEdit3: TDBEdit
+        Left = 58
+        Top = 49
+        Width = 626
+        Height = 21
+        TabStop = False
+        Color = clBtnFace
+        DataField = 'assnome'
+        DataSource = dsTblass
+        ReadOnly = True
+        TabOrder = 1
+      end
+    end
+    object Panel12: TPanel
+      Left = 1
+      Top = 537
+      Width = 1028
+      Height = 41
+      Align = alBottom
+      BevelOuter = bvLowered
+      TabOrder = 1
+      ExplicitWidth = 1008
+      DesignSize = (
+        1028
+        41)
+      object Label4: TLabel
+        Left = 1047
+        Top = 11
+        Width = 145
+        Height = 16
+        Anchors = [akTop, akRight]
+        Caption = '* Campos obrigat'#243'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 819
+      end
+      object Label5: TLabel
+        Left = 869
+        Top = 11
+        Width = 145
+        Height = 16
+        Anchors = [akTop, akRight]
+        Caption = '* Campos obrigat'#243'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 732
+      end
+      object JvImgBtn14: TJvImgBtn
+        Left = 40
+        Top = 8
+        Width = 75
+        Height = 25
+        Action = ActionOkHistorico
+        Default = True
+        ImageIndex = 9
+        Images = frmPrincipal.ImageList16
+        ModalResult = 1
+        TabOrder = 0
+        Kind = bkOK
+      end
+      object JvImgBtn15: TJvImgBtn
+        Left = 121
+        Top = 8
+        Width = 75
+        Height = 25
+        Action = ActionCancelarHistorico
+        Cancel = True
+        ImageIndex = 8
+        Images = frmPrincipal.ImageList16
+        ModalResult = 2
+        TabOrder = 1
+        Kind = bkCancel
+      end
+    end
+    object GroupBox13: TGroupBox
+      Left = 49
+      Top = 126
+      Width = 704
+      Height = 228
+      Caption = 'Hist'#243'rico / Anota'#231#227'o'
+      TabOrder = 2
+      object Label6: TLabel
+        Left = 26
+        Top = 35
+        Width = 27
+        Height = 13
+        Caption = 'Data:'
+        FocusControl = JvDBDateEdit4
+      end
+      object Label7: TLabel
+        Left = 162
+        Top = 36
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label8: TLabel
+        Left = 686
+        Top = 67
+        Width = 15
+        Height = 16
+        AutoSize = False
+        Caption = '*'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object JvDBDateEdit4: TJvDBDateEdit
+        Left = 59
+        Top = 33
+        Width = 97
+        Height = 21
+        DataField = 'hasdt'
+        DataSource = dsTblhas
+        CheckOnExit = True
+        ShowNullDate = False
+        TabOrder = 0
+      end
+      object DBMemoHasdescr: TDBMemo
+        Left = 26
+        Top = 70
+        Width = 655
+        Height = 131
+        DataField = 'hasdescr'
+        DataSource = dsTblhas
+        TabOrder = 1
+      end
+    end
+  end
+  object pnlConsulta: TPanel
+    Left = 0
+    Top = 0
+    Width = 1030
+    Height = 579
+    Align = alClient
+    Color = clWindow
+    Padding.Left = 5
+    Padding.Top = 5
+    Padding.Right = 5
+    Padding.Bottom = 5
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitWidth = 1010
+    object GroupBox2: TGroupBox
+      Left = 6
+      Top = 62
+      Width = 1018
+      Height = 511
+      Align = alClient
+      Caption = 'Resultado da pesquisa'
+      Padding.Left = 5
+      Padding.Top = 5
+      Padding.Right = 5
+      Padding.Bottom = 5
+      TabOrder = 1
+      ExplicitWidth = 998
+      object dbGridAssinantes: TDBGrid
+        Left = 7
+        Top = 20
+        Width = 1004
+        Height = 216
+        Align = alClient
+        DataSource = dsTblass
+        Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+        TabOrder = 0
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'Tahoma'
+        TitleFont.Style = []
+        OnDrawColumnCell = dbGridAssinantesDrawColumnCell
+        OnDblClick = dbGridAssinantesDblClick
+        Columns = <
+          item
+            Expanded = False
+            FieldName = 'asscod'
+            Title.Caption = 'C'#243'digo'
+            Width = 56
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'assnome'
+            Title.Caption = 'Nome'
+            Width = 371
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'assfonecelul'
+            Title.Caption = 'Fone Celular'
+            Width = 90
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'assfoneresid'
+            Title.Caption = 'Fone Residencial'
+            Width = 90
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CalcFonecomerCompleto'
+            Title.Caption = 'Fone Comercial'
+            Width = 119
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CalcDescrStatus'
+            Title.Caption = 'Status'
+            Width = 70
+            Visible = True
+          end
+          item
+            Expanded = False
+            FieldName = 'CalcCodigoDescrZona'
+            Title.Caption = 'Zona'
+            Width = 217
+            Visible = True
+          end>
+      end
+      object PageControl: TPageControl
+        Left = 7
+        Top = 267
+        Width = 1004
+        Height = 237
+        ActivePage = TabSheetAssinaturas
+        Align = alBottom
+        TabOrder = 1
+        ExplicitWidth = 984
+        object TabSheetAssinaturas: TTabSheet
+          Caption = 'Assinaturas'
+          ImageIndex = 1
+          ExplicitWidth = 976
+          object Panel1: TPanel
+            Left = 0
+            Top = 0
+            Width = 692
+            Height = 209
+            Align = alClient
+            BevelOuter = bvNone
+            TabOrder = 0
+            ExplicitWidth = 672
+            object Panel3: TPanel
+              Left = 0
+              Top = 180
+              Width = 692
+              Height = 29
+              Align = alBottom
+              BevelOuter = bvNone
+              TabOrder = 0
+              ExplicitWidth = 672
+              object JvImgBtn1: TJvImgBtn
+                Left = 0
+                Top = 3
+                Width = 75
+                Height = 25
+                Action = ActionNovaAssinatura
+                ImageIndex = 0
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 0
+              end
+              object JvImgBtn2: TJvImgBtn
+                Left = 81
+                Top = 3
+                Width = 75
+                Height = 25
+                Action = ActionEditarAssinatura
+                ImageIndex = 1
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+              object JvImgBtn3: TJvImgBtn
+                Left = 162
+                Top = 3
+                Width = 75
+                Height = 25
+                Action = ActionExcluirAssinatura
+                ImageIndex = 2
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 2
+              end
+            end
+            object GroupBox14: TGroupBox
+              Left = 488
+              Top = 0
+              Width = 204
+              Height = 180
+              Align = alRight
+              Caption = 'Condi'#231#245'es de Pagamento'
+              TabOrder = 1
+              ExplicitLeft = 468
+              object DBGridCondicoes: TDBGrid
+                Left = 2
+                Top = 15
+                Width = 200
+                Height = 163
+                Align = alClient
+                DataSource = dsTblcpa
+                Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+                TabOrder = 0
+                TitleFont.Charset = DEFAULT_CHARSET
+                TitleFont.Color = clWindowText
+                TitleFont.Height = -11
+                TitleFont.Name = 'Tahoma'
+                TitleFont.Style = []
+                Columns = <
+                  item
+                    Expanded = False
+                    FieldName = 'cpanroparc'
+                    Title.Caption = ' '
+                    Width = 16
+                    Visible = True
+                  end
+                  item
+                    Alignment = taCenter
+                    Expanded = False
+                    FieldName = 'cpadtvenc'
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Data Venci.'
+                    Width = 67
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'cpavl'
+                    Title.Alignment = taRightJustify
+                    Title.Caption = 'Valor Parcela'
+                    Width = 76
+                    Visible = True
+                  end>
+              end
+            end
+            object GroupBox16: TGroupBox
+              Left = 0
+              Top = 0
+              Width = 488
+              Height = 180
+              Align = alClient
+              Caption = 'Assinaturas'
+              TabOrder = 2
+              ExplicitWidth = 468
+              object DBGridAssinaturas: TDBGrid
+                Left = 2
+                Top = 15
+                Width = 484
+                Height = 163
+                Align = alClient
+                DataSource = dsTblada
+                Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+                TabOrder = 0
+                TitleFont.Charset = DEFAULT_CHARSET
+                TitleFont.Color = clWindowText
+                TitleFont.Height = -11
+                TitleFont.Name = 'Tahoma'
+                TitleFont.Style = []
+                OnDrawColumnCell = DBGridAssinaturasDrawColumnCell
+                Columns = <
+                  item
+                    Expanded = False
+                    FieldName = 'adacod'
+                    Title.Caption = 'Nro.'
+                    Width = 30
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'CalcAdatipo'
+                    Title.Caption = 'Tipo'
+                    Width = 74
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'adadtini'
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Data In'#237'cio'
+                    Width = 67
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'adadtvenc'
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Data Venci.'
+                    Width = 67
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'adavl'
+                    Font.Charset = DEFAULT_CHARSET
+                    Font.Color = clBlue
+                    Font.Height = -11
+                    Font.Name = 'Tahoma'
+                    Font.Style = []
+                    Title.Alignment = taRightJustify
+                    Title.Caption = 'Vl.Assinatura'
+                    Width = 70
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'adavldesc'
+                    Title.Alignment = taRightJustify
+                    Title.Caption = 'Vl.Desc.'
+                    Width = 45
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'adavlpend'
+                    Title.Alignment = taRightJustify
+                    Title.Caption = 'Vl.Pendente'
+                    Width = 70
+                    Visible = True
+                  end
+                  item
+                    Alignment = taCenter
+                    Expanded = False
+                    FieldName = 'CalcAdacancel'
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Cancelada'
+                    Width = 59
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'adadtcancel'
+                    Title.Caption = 'Dt.Cancel.'
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'adaobs'
+                    Title.Caption = 'Observa'#231#227'o'
+                    Width = 400
+                    Visible = True
+                  end>
+              end
+            end
+          end
+          object Panel4: TPanel
+            Left = 692
+            Top = 0
+            Width = 304
+            Height = 209
+            Align = alRight
+            BevelOuter = bvNone
+            TabOrder = 1
+            ExplicitLeft = 672
+            object Panel5: TPanel
+              Left = 0
+              Top = 179
+              Width = 304
+              Height = 30
+              Align = alBottom
+              BevelOuter = bvNone
+              TabOrder = 0
+              object JvImgBtn4: TJvImgBtn
+                Left = 1
+                Top = 4
+                Width = 75
+                Height = 25
+                Action = ActionNovaBaixa
+                ImageIndex = 0
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 0
+              end
+              object JvImgBtn5: TJvImgBtn
+                Left = 82
+                Top = 4
+                Width = 75
+                Height = 25
+                Action = ActionEditarBaixa
+                ImageIndex = 1
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+              object JvImgBtn6: TJvImgBtn
+                Left = 163
+                Top = 4
+                Width = 75
+                Height = 25
+                Action = ActionExcluirBaixa
+                ImageIndex = 2
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 2
+              end
+            end
+            object GroupBox15: TGroupBox
+              Left = 0
+              Top = 0
+              Width = 304
+              Height = 179
+              Align = alClient
+              Caption = 'Baixas'
+              TabOrder = 1
+              object DBGridBaixas: TDBGrid
+                Left = 2
+                Top = 15
+                Width = 300
+                Height = 162
+                Align = alClient
+                DataSource = dsTblbda
+                Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+                TabOrder = 0
+                TitleFont.Charset = DEFAULT_CHARSET
+                TitleFont.Color = clWindowText
+                TitleFont.Height = -11
+                TitleFont.Name = 'Tahoma'
+                TitleFont.Style = []
+                Columns = <
+                  item
+                    Expanded = False
+                    FieldName = 'bdacod'
+                    Title.Caption = 'Cod.'
+                    Width = 28
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'bdadt'
+                    Title.Caption = 'Data Baixa'
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'bdavl'
+                    Title.Alignment = taRightJustify
+                    Title.Caption = 'Valor Baixa'
+                    Width = 65
+                    Visible = True
+                  end
+                  item
+                    Expanded = False
+                    FieldName = 'usunome'
+                    Title.Caption = 'Usu'#225'rio da baixa'
+                    Width = 100
+                    Visible = True
+                  end>
+              end
+            end
+          end
+        end
+        object TabSheetHistorico: TTabSheet
+          Caption = 'Hist'#243'rico do Assinante'
+          ImageIndex = 1
+          ExplicitWidth = 976
+          object Splitter2: TSplitter
+            Left = 696
+            Top = 0
+            Height = 209
+            Align = alRight
+            ExplicitLeft = 749
+            ExplicitTop = -18
+          end
+          object Panel8: TPanel
+            Left = 0
+            Top = 0
+            Width = 696
+            Height = 209
+            Align = alClient
+            BevelOuter = bvNone
+            Caption = 'Panel8'
+            TabOrder = 0
+            ExplicitWidth = 676
+            object Panel11: TPanel
+              Left = 0
+              Top = 180
+              Width = 696
+              Height = 29
+              Align = alBottom
+              BevelOuter = bvNone
+              TabOrder = 0
+              ExplicitWidth = 676
+              object JvImgBtn11: TJvImgBtn
+                Left = 0
+                Top = 3
+                Width = 75
+                Height = 25
+                Action = ActionNovoHistorico
+                ImageIndex = 0
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 0
+              end
+              object JvImgBtn12: TJvImgBtn
+                Left = 81
+                Top = 3
+                Width = 75
+                Height = 25
+                Action = ActionEditarHistorico
+                ImageIndex = 1
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 1
+              end
+              object JvImgBtn13: TJvImgBtn
+                Left = 162
+                Top = 3
+                Width = 75
+                Height = 25
+                Action = ActionExcluirHistorico
+                ImageIndex = 2
+                Images = frmPrincipal.ImageList16
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 2
+              end
+            end
+            object DBGridHistoricos: TDBGrid
+              Left = 0
+              Top = 0
+              Width = 696
+              Height = 180
+              Align = alClient
+              DataSource = dsTblhas
+              Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+              TabOrder = 1
+              TitleFont.Charset = DEFAULT_CHARSET
+              TitleFont.Color = clWindowText
+              TitleFont.Height = -11
+              TitleFont.Name = 'Tahoma'
+              TitleFont.Style = []
+              Columns = <
+                item
+                  Alignment = taCenter
+                  Expanded = False
+                  FieldName = 'hasdt'
+                  Title.Alignment = taCenter
+                  Title.Caption = 'Data'
+                  Width = 69
+                  Visible = True
+                end
+                item
+                  Expanded = False
+                  FieldName = 'CalcHasdescr'
+                  Title.Caption = 'Descri'#231#227'o / Anota'#231#227'o'
+                  Width = 574
+                  Visible = True
+                end>
+            end
+          end
+          object Panel10: TPanel
+            Left = 699
+            Top = 0
+            Width = 297
+            Height = 209
+            Align = alRight
+            BevelOuter = bvNone
+            Padding.Left = 5
+            Padding.Right = 5
+            Padding.Bottom = 5
+            TabOrder = 1
+            ExplicitLeft = 679
+            object GroupBox3: TGroupBox
+              Left = 5
+              Top = 0
+              Width = 287
+              Height = 175
+              Align = alClient
+              Caption = 'Descri'#231#227'o Completa'
+              Padding.Left = 5
+              Padding.Right = 5
+              Padding.Bottom = 5
+              TabOrder = 0
+              object DBMemo1: TDBMemo
+                Left = 7
+                Top = 15
+                Width = 273
+                Height = 153
+                TabStop = False
+                Align = alClient
+                Color = clBtnFace
+                DataField = 'hasdescr'
+                DataSource = dsTblhas
+                ReadOnly = True
+                ScrollBars = ssVertical
+                TabOrder = 0
+              end
+            end
+            object Panel13: TPanel
+              Left = 5
+              Top = 175
+              Width = 287
+              Height = 29
+              Align = alBottom
+              BevelOuter = bvNone
+              TabOrder = 1
+            end
+          end
+        end
+      end
+      object Panel2: TPanel
+        Left = 7
+        Top = 236
+        Width = 1004
+        Height = 31
+        Align = alBottom
+        BevelOuter = bvNone
+        TabOrder = 2
+        ExplicitWidth = 984
+        DesignSize = (
+          1004
+          31)
+        object lblTotalAssinantes: TLabel
+          Left = 793
+          Top = 4
+          Width = 211
+          Height = 13
+          Alignment = taRightJustify
+          Anchors = [akTop, akRight]
+          AutoSize = False
+          Caption = '0 assinante(s) encontrado(s)'
+          ExplicitLeft = 773
+        end
+        object btnNovoAssinante: TJvImgBtn
+          Left = 4
+          Top = 3
+          Width = 75
+          Height = 25
+          Action = ActionNovoAssinante
+          ImageIndex = 0
+          Images = frmPrincipal.ImageList16
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 0
+        end
+        object btnEditarAssinante: TJvImgBtn
+          Left = 85
+          Top = 3
+          Width = 75
+          Height = 25
+          Action = ActionEditarAssinante
+          ImageIndex = 1
+          Images = frmPrincipal.ImageList16
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+        end
+        object btnExcluirAssinante: TJvImgBtn
+          Left = 166
+          Top = 3
+          Width = 75
+          Height = 25
+          Action = ActionExcluirAssinante
+          ImageIndex = 2
+          Images = frmPrincipal.ImageList16
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 2
+        end
+        object btnHistoricoAlteracoes: TJvImgBtn
+          Left = 284
+          Top = 3
+          Width = 152
+          Height = 25
+          Action = ActionHistoricoAlteracoes
+          ImageIndex = 10
+          Images = frmPrincipal.ImageList16
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 3
+        end
+      end
+    end
+    object GroupBox1: TGroupBox
+      Left = 6
+      Top = 6
+      Width = 1018
+      Height = 56
+      Align = alTop
+      Caption = 'Filtros'
+      TabOrder = 0
+      ExplicitWidth = 998
+      object edtNomeAssinante: TLabeledEdit
+        Left = 142
+        Top = 21
+        Width = 155
+        Height = 21
+        CharCase = ecUpperCase
+        EditLabel.Width = 31
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Nome:'
+        LabelPosition = lpLeft
+        TabOrder = 1
+      end
+      object edtCodigo: TLabeledEdit
+        Left = 50
+        Top = 21
+        Width = 46
+        Height = 21
+        CharCase = ecUpperCase
+        EditLabel.Width = 37
+        EditLabel.Height = 13
+        EditLabel.Caption = 'C'#243'digo:'
+        LabelPosition = lpLeft
+        TabOrder = 0
+        Text = '0'
+        OnExit = edtCodigoExit
+        OnKeyPress = edtCodigoKeyPress
+      end
+      object edtEndereco: TLabeledEdit
+        Left = 365
+        Top = 21
+        Width = 141
+        Height = 21
+        CharCase = ecUpperCase
+        EditLabel.Width = 49
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Endere'#231'o:'
+        LabelPosition = lpLeft
+        TabOrder = 2
+      end
+      object edtNroEndereco: TLabeledEdit
+        Left = 557
+        Top = 21
+        Width = 41
+        Height = 21
+        CharCase = ecUpperCase
+        EditLabel.Width = 25
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Nro.:'
+        LabelPosition = lpLeft
+        TabOrder = 3
+      end
+      object edtCodigoZona: TLabeledEdit
+        Left = 656
+        Top = 21
+        Width = 36
+        Height = 21
+        CharCase = ecUpperCase
+        EditLabel.Width = 28
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Zona:'
+        LabelPosition = lpLeft
+        TabOrder = 4
+      end
+      object edtDescrZona: TEdit
+        Left = 694
+        Top = 21
+        Width = 111
+        Height = 21
+        CharCase = ecUpperCase
+        TabOrder = 5
+      end
+      object Panel14: TPanel
+        Left = 929
+        Top = 15
+        Width = 87
+        Height = 39
+        Align = alRight
+        BevelOuter = bvNone
+        TabOrder = 6
+        ExplicitLeft = 928
+        object btnFiltrar: TJvImgBtn
+          Left = 6
+          Top = 4
+          Width = 75
+          Height = 25
+          Action = ActionFiltrar
+          ImageIndex = 3
+          Images = frmPrincipal.ImageList16
+          TabOrder = 0
+        end
+      end
+    end
+  end
   object ActionList: TActionList
     Images = frmPrincipal.ImageList16
     Left = 238
@@ -2718,7 +2752,7 @@ object frmCadAssinantes: TfrmCadAssinantes
     Left = 102
     Top = 142
     Bitmap = {
-      494C010103000800B40010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010103000800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000

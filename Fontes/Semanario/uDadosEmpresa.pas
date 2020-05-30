@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, Data.FMTBcd, Data.DB, Datasnap.DBClient,
-  Datasnap.Provider, Data.SqlExpr, ACBrBase, ACBrValidador;
+  Datasnap.Provider, Data.SqlExpr;
 
 type
   TdmDadosEmpresa = class(TDataModule)
@@ -87,12 +87,6 @@ end;
 procedure TdmDadosEmpresa.cdsTblempcepcepValidate(Sender: TField);
 begin
   sqlTblcep.Close;
-
-  // Validar CEP
-  dmDadosGlobal.ACBrValidador.TipoDocto := docCEP;
-  dmDadosGlobal.ACBrValidador.Documento := cdsTblempcepcep.AsString;
-  dmDadosGlobal.ACBrValidador.Validar;
-
   sqlTblcep.ParamByName('cepcep').AsString := cdsTblempcepcep.AsString;
   sqlTblcep.Open;
 
@@ -103,9 +97,8 @@ end;
 procedure TdmDadosEmpresa.cdsTblempempcnpjValidate(Sender: TField);
 begin
   // Validar CNPJ
-  dmDadosGlobal.ACBrValidador.TipoDocto := docCNPJ;
-  dmDadosGlobal.ACBrValidador.Documento := cdsTblempempcnpj.Value;
-  dmDadosGlobal.ACBrValidador.Validar;
+  if not dmDadosGlobal.ValidarCNPJ(cdsTblempempcnpj.Value) then
+    raise Exception.Create('CNPJ inválido.');
 end;
 
 procedure TdmDadosEmpresa.cdsTblempempenderValidate(Sender: TField);

@@ -4,7 +4,7 @@ interface
 
 uses
   System.SysUtils, System.Classes, Data.FMTBcd, Data.DB, Datasnap.DBClient,
-  Datasnap.Provider, Data.SqlExpr, ACBrValidador, Vcl.Dialogs, System.UITypes,
+  Datasnap.Provider, Data.SqlExpr, Vcl.Dialogs, System.UITypes,
   System.DateUtils, Data.DBXCommon, Math, System.Variants;
 
 const

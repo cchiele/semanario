@@ -25,10 +25,56 @@ object frmCadUsuarios: TfrmCadUsuarios
     Color = clWindow
     ParentBackground = False
     TabOrder = 1
-    ExplicitLeft = 9
-    ExplicitTop = -4
-    ExplicitWidth = 912
-    ExplicitHeight = 585
+    object Panel2: TPanel
+      Left = 1
+      Top = 536
+      Width = 968
+      Height = 41
+      Align = alBottom
+      BevelOuter = bvLowered
+      TabOrder = 0
+      DesignSize = (
+        968
+        41)
+      object Label29: TLabel
+        Left = 811
+        Top = 11
+        Width = 145
+        Height = 16
+        Anchors = [akTop, akRight]
+        Caption = '* Campos obrigat'#243'rios'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        ExplicitLeft = 700
+      end
+      object btnSalvar: TJvImgBtn
+        Left = 40
+        Top = 8
+        Width = 75
+        Height = 25
+        Default = True
+        ModalResult = 1
+        TabOrder = 0
+        OnClick = btnSalvarClick
+        Kind = bkOK
+      end
+      object btnCancelar: TJvImgBtn
+        Left = 121
+        Top = 8
+        Width = 75
+        Height = 25
+        Cancel = True
+        Caption = 'Cancelar'
+        ModalResult = 2
+        TabOrder = 1
+        OnClick = btnCancelarClick
+        Kind = bkCancel
+      end
+    end
     object Panel3: TPanel
       Left = 1
       Top = 1
@@ -42,8 +88,6 @@ object frmCadUsuarios: TfrmCadUsuarios
       Padding.Right = 5
       Padding.Bottom = 5
       TabOrder = 1
-      ExplicitLeft = 97
-      ExplicitTop = 21
       object GroupBox3: TGroupBox
         Left = 5
         Top = 5
@@ -224,10 +268,6 @@ object frmCadUsuarios: TfrmCadUsuarios
         Padding.Right = 5
         Padding.Bottom = 5
         TabOrder = 1
-        ExplicitLeft = 488
-        ExplicitTop = 20
-        ExplicitWidth = 289
-        ExplicitHeight = 218
         object TreeViewPermissao: TTreeView
           Left = 7
           Top = 20
@@ -242,69 +282,7 @@ object frmCadUsuarios: TfrmCadUsuarios
           OnCollapsing = TreeViewPermissaoCollapsing
           OnCustomDrawItem = TreeViewPermissaoCustomDrawItem
           OnDblClick = TreeViewPermissaoDblClick
-          ExplicitLeft = -8
-          ExplicitTop = 37
         end
-      end
-    end
-    object Panel2: TPanel
-      Left = 1
-      Top = 536
-      Width = 968
-      Height = 41
-      Align = alBottom
-      BevelOuter = bvLowered
-      TabOrder = 0
-      DesignSize = (
-        968
-        41)
-      object Label29: TLabel
-        Left = 811
-        Top = 11
-        Width = 145
-        Height = 16
-        Anchors = [akTop, akRight]
-        Caption = '* Campos obrigat'#243'rios'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = [fsBold]
-        ParentFont = False
-        ExplicitLeft = 700
-      end
-      object btnSalvar: TJvImgBtn
-        Left = 40
-        Top = 8
-        Width = 75
-        Height = 25
-        Default = True
-        ModalResult = 1
-        TabOrder = 0
-        OnClick = btnSalvarClick
-        HotTrackFont.Charset = DEFAULT_CHARSET
-        HotTrackFont.Color = clWindowText
-        HotTrackFont.Height = -11
-        HotTrackFont.Name = 'Tahoma'
-        HotTrackFont.Style = []
-        Kind = bkOK
-      end
-      object btnCancelar: TJvImgBtn
-        Left = 121
-        Top = 8
-        Width = 75
-        Height = 25
-        Cancel = True
-        Caption = 'Cancelar'
-        ModalResult = 2
-        TabOrder = 1
-        OnClick = btnCancelarClick
-        HotTrackFont.Charset = DEFAULT_CHARSET
-        HotTrackFont.Color = clWindowText
-        HotTrackFont.Height = -11
-        HotTrackFont.Name = 'Tahoma'
-        HotTrackFont.Style = []
-        Kind = bkCancel
       end
     end
   end
@@ -404,11 +382,6 @@ object frmCadUsuarios: TfrmCadUsuarios
         Images = frmPrincipal.ImageList16
         TabOrder = 2
         OnClick = btnFiltrarClick
-        HotTrackFont.Charset = DEFAULT_CHARSET
-        HotTrackFont.Color = clWindowText
-        HotTrackFont.Height = -11
-        HotTrackFont.Name = 'Tahoma'
-        HotTrackFont.Style = []
       end
       object edtLogin: TLabeledEdit
         Left = 49
@@ -442,11 +415,6 @@ object frmCadUsuarios: TfrmCadUsuarios
         Images = frmPrincipal.ImageList16
         TabOrder = 0
         OnClick = btnNovoClick
-        HotTrackFont.Charset = DEFAULT_CHARSET
-        HotTrackFont.Color = clWindowText
-        HotTrackFont.Height = -11
-        HotTrackFont.Name = 'Tahoma'
-        HotTrackFont.Style = []
       end
       object btnEditar: TJvImgBtn
         Tag = 61
@@ -459,11 +427,6 @@ object frmCadUsuarios: TfrmCadUsuarios
         Images = frmPrincipal.ImageList16
         TabOrder = 1
         OnClick = btnEditarClick
-        HotTrackFont.Charset = DEFAULT_CHARSET
-        HotTrackFont.Color = clWindowText
-        HotTrackFont.Height = -11
-        HotTrackFont.Name = 'Tahoma'
-        HotTrackFont.Style = []
       end
       object btnExcluir: TJvImgBtn
         Tag = 62
@@ -476,11 +439,6 @@ object frmCadUsuarios: TfrmCadUsuarios
         Images = frmPrincipal.ImageList16
         TabOrder = 2
         OnClick = btnExcluirClick
-        HotTrackFont.Charset = DEFAULT_CHARSET
-        HotTrackFont.Color = clWindowText
-        HotTrackFont.Height = -11
-        HotTrackFont.Name = 'Tahoma'
-        HotTrackFont.Style = []
       end
     end
   end
@@ -494,7 +452,7 @@ object frmCadUsuarios: TfrmCadUsuarios
     Left = 712
     Top = 288
     Bitmap = {
-      494C010103000800700010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
+      494C010103000800040010001000FFFFFFFF2110FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000508
       09360D16185100010116000000000000000000000000000000001D343F8D0710

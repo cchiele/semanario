@@ -23,7 +23,6 @@ type
     dbGridAssinantes: TDBGrid;
     GroupBox1: TGroupBox;
     edtNomeAssinante: TLabeledEdit;
-    btnFiltrar: TJvImgBtn;
     ActionList: TActionList;
     ActionAtualizarCampoCobrador: TAction;
     ActionNovoAssinante: TAction;
@@ -270,6 +269,8 @@ type
     DBLookupComboBox5: TDBLookupComboBox;
     Label14: TLabel;
     btnConsultaCep: TJvImgBtn;
+    Panel14: TPanel;
+    btnFiltrar: TJvImgBtn;
     procedure ActionFiltrarExecute(Sender: TObject);
     procedure TimerInicioTimer(Sender: TObject);
     procedure ActionEditarAssinanteExecute(Sender: TObject);
