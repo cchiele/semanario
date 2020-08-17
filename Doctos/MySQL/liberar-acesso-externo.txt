@@ -1,0 +1,9 @@
+https://receitasdecodigo.com.br/banco-de-dados/liberar-acesso-remoto-para-servidores-mysql
+
+comandos:
+
+mysql -u root -p
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'senha_do_root' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
